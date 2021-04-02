@@ -89,3 +89,46 @@ body, html {
 	top: -1em;
 	border-radius:  0 0 15% 15%;
 }
+
+.banana-light{
+	width: 6em;
+	height: 6em;
+	background-color: transparent;
+	box-shadow: -1em 1em 0 0  #ffdc40;
+	border-radius: 50%;
+	top: -1.5em;
+	left: 1.5em;
+	position: absolute;
+}
+.banana-dark{
+	width: 6em;
+	height: 6em;
+	background-color: transparent;
+	box-shadow: -1em 1em 0 0  #f0cb28;
+	border-radius: 50%;
+	top: -1em;
+	left: 1em;
+	position: absolute;
+}
+.banana-dark::before{
+	content: "";
+	position: absolute;
+	width: 0.5em;
+	height: 1em;
+	background-color: #abc05f;
+	transform: rotate(45deg);
+	top: 0.7em;
+	left: 0.5em;
+	border-radius: 10% 10% 25% 25%;
+}
+.banana-dark::after{
+	content: "";
+	position: absolute;
+	width: 0.5em;
+	height: 0.5em;
+	background-color: #72532a;
+	transform: rotate(45deg);
+	top: 5em;
+	left: 4.5em;
+	border-radius: 25%;
+}
