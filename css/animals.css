@@ -13,7 +13,7 @@ body, html {
     overflow-x: hidden;
     overflow-y: hidden;
 
-    background: linear-gradient(to top, #b4e9fd 0%,#ffffff 100%);
+    background: linear-gradient(to top, #b4e9fd 0%,white 100%);
 
     justify-content: center;
     align-items: center;
@@ -51,7 +51,7 @@ body, html {
     position: absolute;
     height: 1em;
     width: 0.5em;
-    background: #ffffff;
+    background: white;
     border-radius: 50%;
 }
 
@@ -67,7 +67,7 @@ body, html {
     position: absolute;
     height: 1em;
     width: 0.5em;
-    background: #ffffff;
+    background: white;
     border-radius: 50%;
 }
 
@@ -98,7 +98,7 @@ body, html {
     position: absolute;
     height: 18em;
     width: 6em;
-    background: #ffffff;
+    background: white;
     border-radius: 50%;
 }
 
