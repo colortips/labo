@@ -1,0 +1,222 @@
+body, html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+  }
+
+.background {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    background: linear-gradient(to top, #ff4e4e 0%,white 100%);
+
+    justify-content: center;
+    align-items: center;
+}
+.pikachu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pikachu-face,.pikachu-face::before,.pikachu-face::after, .pikachu-ear-left::before, .pikachu-ear-right::before, .pikachu-body,
+ .pikachu-nose::before, .pikachu-nose::after, .pikachu-cheek-left, .pikachu-cheek-right, .pikachu-cheek-left::before, .pikachu-cheek-right::before{
+    background-color: #FED521;
+}
+
+.pikachu-face{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12em;
+    width: 10em;
+    top: -10em;
+    border-radius: 40% 40% 25% 25%;
+}
+.pikachu-face::before, .pikachu-face::after{
+    content: "";
+    position: relative;
+    height: 8em;
+    width: 6em;
+    border-radius: 50%;
+    top: 2em;
+    background: transparent !important;
+}
+.pikachu-face::before{
+    left: -1em;
+}
+.pikachu-face::after{
+    left: 1em;
+}
+.pikachu-nose{
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-left: 0.25em solid transparent;
+    border-right: 0.25em solid transparent;
+    border-top: 0.5em solid black;
+    left: 0.64em;
+}
+.pikachu-nose::before, .pikachu-nose::after{
+    content: "";
+    position: relative;
+    display: block;
+
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+}
+.pikachu-nose::before{
+    left: -1.25em;
+    top:0em;
+}
+.pikachu-nose::after{
+    left: -0.25em;
+    top:-1.5em;
+}
+.pikachu-mouth{ 
+    position:relative;
+    display: block;
+
+    left: -0.25em;
+    top: 2.5em;
+    height: 2em;                              
+    width: 1.5em;
+    border-radius: 1em 1em 50% 50%;
+    background: #6E0806;
+}
+.pikachu-mouth::before{
+    content: "";
+    position: relative;
+    display: block;
+    top: 0.8em;
+    height: 2.5em;
+    width: 1.25em;
+    border-radius: 0.5em 0.5em 50% 50%;
+    background: #F0535F;
+}
+.pikachu-eye-left, .pikachu-eye-right{
+    position: relative;
+    display: block;
+    top: -1em;
+    width: 170em;
+    height: 2em;
+    border-radius: 50%;
+    background: black;
+}
+.pikachu-eye-left{
+    left: -1em;
+} 
+.pikachu-eye-right{
+    left: 1em;
+}
+.pikachu-eye-left::after, .pikachu-eye-right::after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 0.75em;
+    height: 0.75em;
+    left: 0.2em;
+    top:0.2em;
+    border-radius: 50%;
+    background: white;
+}
+
+.pikachu-cheek-left, .pikachu-cheek-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 90em;
+    height: 4em;
+    top: 4em;
+    background: transparent;
+
+}
+.pikachu-cheek-left{
+    left: -2em;
+    transform: rotate(-45deg);
+    border-radius: 100% 0 0 1em;
+}
+.pikachu-cheek-right{
+    left: 2em;
+    transform: rotate(45deg);
+    border-radius: 0 100% 1em 0;
+
+}
+.pikachu-cheek-left::before, .pikachu-cheek-right::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 3em;
+    height: 5em;
+    border-radius: 50%;
+    top: -1em
+}
+.pikachu-cheek-left::before{
+    transform: rotate(45deg);
+    left: 1em;
+
+}
+.pikachu-cheek-right::before{
+    transform: rotate(-45deg);
+    top: -1em;
+    left: -3em;
+
+}
+
+.pikachu-cheek-left::after, .pikachu-cheek-right::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 2em;
+    height: 2em;
+    background: #FE2F12;
+    border-radius: 50%;
+    top: -0.3em;
+
+}
+.pikachu-cheek-left::after{
+    left: 1.5em;    
+} 
+.pikachu-cheek-right::after{
+    left: -2.5em;
+}
+.pikachu-ear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pikachu-ear-left, .pikachu-ear-right{
+    position: relative;
+    width: 150em;
+    height: 10em;
+    border-radius: 50%;
+    top: -8em;
+    background: black;
+
+}
+.pikachu-ear-right{
+    transform: rotate(45deg);
+    left: 2em;
+    top: -7.5em;
+}
+.pikachu-ear-left::before, .pikachu-ear-right::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1.5em;
+    height: 10em;
+    top: 1em;
+}
+.pikachu-ear-left::before{
+border-radius: 100% 50% 50% 50%;
+}
+.pikachu-ear-right::before{
+    border-radius: 50% 100% 50% 50%;
+}
