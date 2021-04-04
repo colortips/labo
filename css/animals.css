@@ -45,6 +45,13 @@ body, html {
 	border-right: 1em solid transparent;
 	border-top: 1.5em solid white;
 }
+.next:hover::after{
+    transition: 0.5s;
+    border-left: 1.5em solid transparent;
+	border-right: 1.5em solid transparent;
+	border-top: 2.25em solid white;
+}
+
 .prev{
     align-self: flex-start;
 }
@@ -55,6 +62,12 @@ body, html {
 	border-left: 1em solid transparent;
 	border-right: 1em solid transparent;
 	border-bottom: 1.5em solid white;
+}
+.prev:hover::after{
+    transition: 0.5s;
+    border-left: 1.5em solid transparent;
+	border-right: 1.5em solid transparent;
+	border-bottom: 2.25em solid white;
 }
 
 .penguin{
@@ -306,4 +319,19 @@ body, html {
     top: 2em;
     position: relative;
 }
-
+.koala:hover, .penguin:hover{
+    animation-name: growing;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes growing {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

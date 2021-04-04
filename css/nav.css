@@ -20,3 +20,18 @@
 	border-right: 3em solid white;
 	border-bottom: 1em solid transparent;
 }
+
+.return:hover::after{
+    animation-name: rotate_cloackwise;
+  	animation-duration: 1s;
+}
+@keyframes rotate_cloackwise {
+	from{ 
+		transform: rotate(0deg);
+        border-right: 0em solid white;
+	}
+	to{
+		transform: rotate(360deg);
+        border-right: 3em solid white;
+	}  
+  }
