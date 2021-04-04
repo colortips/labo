@@ -4,7 +4,7 @@ body, html {
 	margin: 0;
   }
 
-.background {
+.iceland, .forest {
     display: flex;
     width: 100vw;
     height: 100%;
@@ -13,17 +13,56 @@ body, html {
     overflow-x: hidden;
     overflow-y: hidden;
 
-    background: linear-gradient(to top, #b4e9fd 0%,white 100%);
 
     justify-content: center;
     align-items: center;
 }
+.iceland{
+    background: linear-gradient(to top, #b4e9fd 0%,white 100%);
+}
+.forest{
+    background: linear-gradient(to top, #1c7031 0%,#51e075 100%);
+}
+.nav{
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background: #222222;
+	box-shadow: inset 0.2em -.2em  #111111;
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.next{
+    align-self: flex-end;
+}
+.next::after{
+    content: "";    
+    width: 0;
+	height: 0;
+	border-left: 1em solid transparent;
+	border-right: 1em solid transparent;
+	border-top: 1.5em solid white;
+}
+.prev{
+    align-self: flex-start;
+}
+.prev::after{
+    content: "";    
+    width: 0;
+	height: 0;
+	border-left: 1em solid transparent;
+	border-right: 1em solid transparent;
+	border-bottom: 1.5em solid white;
+}
+
 .penguin{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .penguin-head{
     position: relative;
     z-index: 2;
