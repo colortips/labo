@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+body, html {
+	height: 100%;
+	width: 100%;
+}
+body{
+
+	min-height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.grid-container {
+    display: grid;
+}
+.grid-content:nth-child(1n){
+    background: hsl(31, 77%, 52%);
+    border-radius: 1em 0 0 1em;
+}
+.grid-content:nth-child(2n){
+    background: hsl(184, 100%, 22%);
+    border-radius: 0;
+
+}
+.grid-content:nth-child(3n){
+    background: hsl(179, 100%, 13%);
+    border-radius: 0 1em 1em 0;
+}
+.title{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: "Big Shoulders Display";
+    font-weight: 700;
+    font-size: 50px;
+}
+.description, button{
+    margin-bottom: 50px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    font-size: 15px;
+}
+button{
+    margin-top: 50px;
+    height: 40px;
+    width: 125px;
+    border-radius: 25px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    outline: transparent;
+
+}
+button.bright-orange{
+    color: hsl(31, 77%, 52%);
+}
+button.dark-cyan{
+    color: hsl(184, 100%, 22%);
+}
+button.very-dark-cyan{
+    color: hsl(179, 100%, 13%);
+}
+button:hover{
+    border-style: solid;
+    border-color: white;
+    background: transparent;
+    color: white;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+ 
+    .grid-container{
+        width: 90%;
+        height: 80%;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .grid-content{
+        padding: 25px;
+    }
+    .grid-content:nth-child(1n){
+        border-radius: 1em 1em 0 0;
+    }
+    .grid-content:nth-child(2n){
+        border-radius: 0;
+    
+    }
+    .grid-content:nth-child(3n){
+        border-radius: 0 0 1em 1em;
+    }
+    .attribution{
+        visibility: hidden;
+    }
+ 
+}
+@media only screen and (min-width : 1224px) {
+    .grid-container{
+        width: 60%;
+        height: 60%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .grid-content{
+        padding: 50px;
+    }
+    .grid-content:nth-child(1n){
+        border-radius: 1em 0 0 1em;
+    }
+    .grid-content:nth-child(2n){
+        border-radius: 0;
+    
+    }
+    .grid-content:nth-child(3n){
+        border-radius: 0 1em 1em 0;
+    }
+    
+}
+.attribution{
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    font-size: 15px;
+    color: black;
+    position: absolute;
+    align-self: flex-end;
+    margin: 25px;    
+} 
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
