@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="../../css/nav.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <script defer src="js/form_validation.js"></script>
   
   <title>Frontend Mentor | Intro component with sign up form</title>
 </head>
@@ -26,12 +27,16 @@
       <div class="call-to-action">
         <p><b>Try it free 7 days </b> then $20/mo. thereafter</p>
       </div>
-      <form action="" method="POST">
-        <input type="text" id="First-Name" name="First-Name" placeholder="First Name"/> 
-        <input type="text" id="Last-Name" placeholder="Last Name"/> 
-        <input type="email" id="Email-Address" placeholder="Email Address"/> 
-        <input type="password" id="Password" placeholder="Password"/>     
-        <button type="submit" class="submit-form">
+      <form action="" method="POST" id="signUpForm">
+        <input type="text" id="First-Name" placeholder="First Name"><img class="error-image" id="err-icon-FN" src="images/icon-error.svg"/></input>
+        <div class="error" id="First-Name-Err"></div> 
+        <input type="text" id="Last-Name" placeholder="Last Name"><img class="error-image" id="err-icon-LN" src="images/icon-error.svg"/></input>
+        <div class="error" id="Last-Name-Err"></div>  
+        <input type="email" id="Email-Address" placeholder="Email Address"><img class="error-image" id="err-icon-Email" src="images/icon-error.svg"/></input>
+        <div class="error" id="Email-Err"></div>  
+        <input type="password" id="Password" placeholder="Password"><img class="error-image" id="err-icon-PW" src="images/icon-error.svg"/></input>
+        <div class="error" id="Password-Err"></div>      
+        <button type="submit" class="submit-form" id="Send-Form">
           Claim your free trial
         </button>
         <p class="term">

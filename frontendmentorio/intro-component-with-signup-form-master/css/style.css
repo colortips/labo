@@ -61,6 +61,7 @@ form{
     background: #fff;
     border-radius: 1em;
     padding: 40px 0;
+    box-shadow: 0 10px hsla(249, 10%, 26%, 0.25);
 }
 .title{
     color: #fff;
@@ -120,6 +121,11 @@ input{
     font-weight: 600;
     color: hsl(249, 10%, 26%);
     border: 1px solid #fff;
+     
+}
+input::after{
+    content: "";
+    image: url("../images/icon-error.svg");
 }
 input:focus{
     border: 1px solid hsl(249, 10%, 26%);
@@ -149,6 +155,23 @@ justify-content: center;
     opacity: .5;
     cursor: pointer;
 }
+
+.error{
+    font-size: 10px;
+    color: hsl(0, 100%, 74%);
+    text-align: end;
+    width: 85%;
+    font-style: italic;
+}
+.error-image{
+    position: relative;
+    top: -45px;
+    align-self: flex-end;
+    left: -75px;
+    visibility: hidden;
+    height: 0;
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     body{
         background-image: url("../images/bg-intro-mobile.png"); 
@@ -166,5 +189,8 @@ justify-content: center;
     }
     .term{
         text-align: center;
+    }
+    .error-image{
+        left: -25px;
     }
 }
