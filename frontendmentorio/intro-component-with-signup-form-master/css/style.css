@@ -157,11 +157,14 @@ justify-content: center;
 }
 
 .error{
+    position: relative;
     font-size: 10px;
     color: hsl(0, 100%, 74%);
     text-align: end;
     width: 85%;
     font-style: italic;
+    top: -30px;
+    right: 5px;
 }
 .error-image{
     position: relative;
