@@ -38,5 +38,6 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .return{
         transform: scale(0.5);
+        margin: 0;
     }
 }

@@ -1,5 +1,5 @@
 *, *:before, *:after {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,8 +10,8 @@ body, html {
   font-size: 12px;
   background: linear-gradient(to right,#33A8FF 0%, #5BB4F7 100%);
   height: 100%;
-    width: 100%;
-    margin: 0;
+  width: 100%;
+  margin: 0;
 }
 @keyframes come_from_top {
   from{ 
@@ -31,17 +31,18 @@ body, button, input {
 
   .background {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100%;
-    min-height: 100%;
+    /* min-height: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: hidden; */
   }
   
   .container {
-    flex: 0 1 700px;
-    margin: auto;
+    width: 60%;
     padding: 10px;
   }
   
@@ -49,37 +50,42 @@ body, button, input {
     position: relative;
     background: #3e3e3e;
     border-radius: 15px;
+    height: 100%;
   }
   
-  .screen:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 20px;
-    right: 20px;
-    bottom: 0;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
-    z-index: -1;
-  }
+/* .screen:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  z-index: -1;
+} */
   
   .screen-header {
     display: flex;
     align-items: center;
     padding: 10px 20px;
     background: #4d4d4f;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-radius: 15px 15px 0 0;
   }
 
   .screen-body {
     display: flex;
+    width: 100%;
+    height: 100%;
   }
   
   .screen-body-item {
-    flex: 1;
+    display: flex;
+    width: 100%;
+    height: 100%;
     padding: 50px;
+
   }
 
   .app-form-control {
@@ -131,4 +137,14 @@ a:hover {
   color: #33A8FF;
   background-color: transparent;
   text-decoration: underline;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .container {
+    width: 90%;
+    height: 90%;
+  }
+  body{
+    font-size: 50px;
+  } 
 }
