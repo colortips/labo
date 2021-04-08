@@ -1,10 +1,10 @@
-@import './variables';
-@import './mixins';
-@import './placeholders';
+@import "./variables";
+@import "./mixins";
+@import "./placeholders";
 @import url(https://fonts.google.com/specimen/Inter);
 
 // ---- reset ----
-*{
+* {
     vertical-align: baseline;
     font-weight: inherit;
     font-family: inherit;
@@ -16,111 +16,241 @@
     margin: 0;
 }
 
-body, html {
-	height: 100%;
-	width: 100%;
+body,
+html {
+    height: 100%;
+    width: 100%;
 }
-body{
+body {
     display: flex;
     justify-content: center;
-	min-height: 100%;
+    min-height: 100%;
     font-family: "Inter";
     font-weight: 400;
-    // @extend %flex-center;   
+    // @extend %flex-center;
 }
-header{
+header {
     position: absolute;
     @extend %flex-center;
     height: 25%;
     width: 100%;
-    background: $Very-Pale-Blue-Top-BG-Pattern;
+    border-radius: 0 0 25px 25px;
 }
-.header--container{
+.header--container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     width: 80%;
     height: 60%;
 }
-.header--text{
+.header--text {
     display: flex;
     flex-flow: column;
-}
-.header--title{
-    color: $Very-Dark-Blue-Text;
     font-weight: 700;
+}
+.header--title {
     font-size: 30px;
 }
-.header--subtitle{
-    color: $Dark-Grayish-Blue-Text;
-}
-.header--mode{
+.header--mode {
     align-self: flex-start;
+    @extend %flex-center;
+    font-weight: 700;
 }
-.main--container{
+.header--mode * {
+    margin: 0 10px;
+}
+.button--togle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50px;
+    height: 26px;
+    border-radius: 13px;
+    padding: 5px;
+}
+.button--togle::after {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+.button--togle:hover {
+    cursor: pointer;
+}
+.main--container {
     position: absolute;
     margin-top: 10%;
     width: 80%;
     height: 80%;
 }
-.primary--social-container{
+.primary--social-container {
     @extend %flex-center;
     justify-content: space-between;
     width: 100%;
     min-height: 200px;
     flex-flow: wrap;
 }
-.full--card{
+.full--card {
     @extend %flex-center;
     width: 250px;
     height: 200px;
-    background: $Light-Grayish-Blue-Card-BG;
     flex-flow: column;
     border-radius: 5px;
+    margin: 10px;
 }
-.full--card::after{
+.full--card::after {
     content: "";
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -175px;
     width: 250px;
     height: 5px;
     border-radius: 5px 5px 0 0;
 }
-.full--card:nth-of-type(1)::after{
+.full--card:nth-of-type(1)::after {
     background: $Facebook;
 }
-.full--card:nth-of-type(2)::after{
+.full--card:nth-of-type(2)::after {
     background: $Twitter;
 }
-.full--card:nth-of-type(3)::after{
+.full--card:nth-of-type(3)::after {
     background: $Instagram;
 }
-.full--card:nth-of-type(4)::after{
+.full--card:nth-of-type(4)::after {
     background: $YouTube;
 }
-.card--at{
+.card--at {
     @extend %flex-center;
     width: 100%;
     margin-bottom: 10px;
 }
-.card--at *{
+.card--at * {
     margin: 0 10px;
 }
-.card--value{
+.card--value {
     @extend %flex-center;
     width: 100%;
-    color: $Very-Dark-Blue-Text;
     font-size: 60px;
     font-weight: 700;
 }
-.card--followers{
+.card--followers {
     @extend %flex-center;
     width: 100%;
-    color: $Dark-Grayish-Blue-Text;
     letter-spacing: 5px;
 }
-.card--today{
+.card--today {
     @extend %flex-center;
     width: 100%;
     margin-top: 10px;
+}
+.overview--container {
+    margin-top: 70px;
+}
+.overview--title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.mini--card--container {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+.mini--card {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px 0;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    height: 100px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 0 25px;
+    width: 200px;
+}
+.mini--card--label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 700;
+}
+.mini--card--value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 700;
+    font-size: 30px;
+}
+.mini--card--icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.mini--card--today {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.today--plus,
+.today--moins {
+    font-weight: 700;
+}
+.today--plus::before,
+.today--moins::before {
+    content: "";
+    position: relative;
+    width: 0;
+    height: 0;
+    margin-right: 5px;
+}
+.today--plus {
+    color: $Lime-Green;
+}
+.today--plus::before {
+    border-left: 0.25em solid transparent;
+    border-right: 0.25em solid transparent;
+    border-bottom: 0.5em solid $Lime-Green;
+}
+.today--moins {
+    color: $Bright-Red;
+}
+.today--moins::before {
+    border-left: 0.25em solid transparent;
+    border-right: 0.25em solid transparent;
+    border-top: 0.5em solid $Bright-Red;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 1050px) {
+    
+    .header--container{
+        flex-flow: column;
+        width: 90%;
+        height: 70%;
+    }
+    .header--title{
+        font-size: 25px;
+    }
+    .header--mode{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .main--container {
+        position: relative;
+        margin-top: 250px;
+        width: 90%;
+        height: auto;
+    }
+    .primary--social-container{
+        justify-content: center;
+    }
+    .overview--container{
+        margin-top: 35px;
+    }
+    .overview--title{
+        font-size: 20px;
+    }
+    .mini--card--container {
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: center;
+    }
 }

@@ -1,0 +1,30 @@
+body {
+  color: #1e202a;
+  background: white;
+}
+
+.header--subtitle,
+.header--mode,
+.card--followers,
+.overview--title,
+.mini--card--label {
+  color: #63687e;
+}
+
+.header {
+  background: #f5f7ff;
+}
+
+.button--togle {
+  background: #aeb3cb;
+}
+
+.button--togle::after {
+  background: white;
+}
+
+.full--card, .mini--card {
+  background: #f0f2fa;
+}
+
+/*# sourceMappingURL=light-theme.css.map */

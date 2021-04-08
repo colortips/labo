@@ -1,0 +1,29 @@
+@import "./variables";
+
+body {
+    color: $White-Text;
+    background: $Very-Dark-Blue-BG;
+}
+.header--subtitle,
+.header--mode,
+.card--followers,
+.overview--title,
+.mini--card--label {
+    color: $Desaturated-Blue-Text;
+}
+.header {
+    background: $Very-Dark-Blue-Top-BG-Pattern;
+}
+
+.button--togle {
+    background: $Toggle-dark;
+}
+.button--togle::after {
+    background: $Very-Dark-Blue-BG;
+}
+.full--card, .mini--card {
+    background: $Dark-Desaturated-Blue-Card-BG;
+}
+.header--title{
+    color: $White-Text;
+}

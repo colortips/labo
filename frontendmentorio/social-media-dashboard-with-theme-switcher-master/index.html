@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/light-theme.css"> -->
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link id="css_mode" rel="stylesheet" href="css/light-theme.css">
 
-  
+  <script defer src="js/changeMode.js"></script>
+
+
+
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 
@@ -16,6 +25,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>-->
 </head>
+
 <body>
   <header class="header">
     <div class="header--container">
@@ -26,19 +36,20 @@
         <div class="header--subtitle">
           Total Followers: 23,004
         </div>
-      </div>      
-      <button class="header--mode button--togle">
+      </div>
+      <div class="header--mode">
         Dark Mode
-      </button>
+        <button onclick="togleMode()" class="button--togle" id="button--togle"></button>
+      </div>
     </div>
-    
+
 
   </header>
   <div class="main--container">
     <div class="primary--social-container">
       <div class="full--card">
         <div class="card--at">
-          <img src="images/icon-facebook.svg" class="social--icon" alt="icon-facebook"/>
+          <img src="images/icon-facebook.svg" class="social--icon" alt="icon-facebook" />
           @nathanf
         </div>
         <div class="card--value">
@@ -47,14 +58,14 @@
         <div class="card--followers">
           Followers
         </div>
-        <div class="card--today">
+        <div class="card--today today--plus">
           12 Today
         </div>
       </div>
 
       <div class="full--card">
         <div class="card--at">
-          <img src="images/icon-twitter.svg" class="social--icon" alt="icon-twitter"/>
+          <img src="images/icon-twitter.svg" class="social--icon" alt="icon-twitter" />
           @nathanf
         </div>
         <div class="card--value">
@@ -63,14 +74,14 @@
         <div class="card--followers">
           Followers
         </div>
-        <div class="card--today">
+        <div class="card--today today--plus">
           99 Today
         </div>
       </div>
 
       <div class="full--card">
         <div class="card--at">
-          <img src="images/icon-instagram.svg" class="social--icon" alt="icon-instagram"/>
+          <img src="images/icon-instagram.svg" class="social--icon" alt="icon-instagram" />
           @realnathanf
         </div>
         <div class="card--value">
@@ -79,14 +90,14 @@
         <div class="card--followers">
           Followers
         </div>
-        <div class="card--today">
+        <div class="card--today today--plus">
           1099 Today
         </div>
       </div>
 
       <div class="full--card">
         <div class="card--at">
-          <img src="images/icon-youtube.svg" class="social--icon" alt="icon-youtube"/>
+          <img src="images/icon-youtube.svg" class="social--icon" alt="icon-youtube" />
           Nathan F.
         </div>
         <div class="card--value">
@@ -95,48 +106,144 @@
         <div class="card--followers">
           Subscribers
         </div>
-        <div class="card--today">
+        <div class="card--today today--moins">
           144 Today
         </div>
       </div>
     </div>
-  Overview - Today
+    <div class="overview--container">
+      <div class="overview--title">
+        Overview - Today
+      </div>
+      <div class="mini--card--container">
 
-  Page Views
-  87
-  3%
+        <div class="mini--card">
+          <div class="mini--card--label">
+            Page Views
+          </div>
+          <div class="mini--card--value">
+            87
+          </div>
+          <div class="mini--card--icon">
+            <img src="images/icon-facebook.svg" class="mini--card--social--icon" alt="icon-facebook" />
+          </div>
+          <div class="mini--card--today today--plus">
+            3%
+          </div>
+        </div>
 
-  Likes
-  52
-  2%
+        <div class="mini--card">
+          <div class="mini--card--label">
+            Likes
+          </div>
+          <div class="mini--card--value">
+            52
+          </div>
+          <div class="mini--card--icon">
+            <img src="images/icon-facebook.svg" class="mini--card--social--icon" alt="icon-facebook" />
+          </div>
+          <div class="mini--card--today today--moins">
+            2%
+          </div>
+        </div>
 
-  Likes
-  5462
-  2257%
+        <div class="mini--card">
+          <div class="mini--card--label">
+            Likes
+          </div>
+          <div class="mini--card--value">
+            5462
+          </div>
+          <div class="mini--card--icon">
+            <img src="images/icon-instagram.svg" class="mini--card--social--icon" alt="icon-instagram" />
+          </div>
+          <div class="mini--card--today today--plus">
+            2257%
+          </div>
+        </div>
 
-  Profile Views
-  52k
-  1375%
+        <div class="mini--card">
+          <div class="mini--card--label">
+            Profile Views
+          </div>
+          <div class="mini--card--value">
+            52k
+          </div>
+          <div class="mini--card--icon">
+            <img src="images/icon-instagram.svg" class="mini--card--social--icon" alt="icon-instagram" />
+          </div>
+          <div class="mini--card--today today--plus">
+            1375%
+          </div>
+        </div>
 
-  Retweets
-  117
-  303%
+        <div class="mini--card">
+          <div class="mini--card--label">
+            Retweets
+          </div>
+          <div class="mini--card--value">
+            117
+          </div>
+          <div class="mini--card--icon">
+            <img src="images/icon-twitter.svg" class="mini--card--social--icon" alt="icon-twitter" />
+          </div>
+          <div class="mini--card--today today--plus">
+            303%
+          </div>
+        </div>
 
-  Likes
-  507
-  553%
+        <div class="mini--card">
+          <div class="mini--card--label">
+            Likes
+          </div>
+          <div class="mini--card--value">
+            507
+          </div>
+          <div class="mini--card--icon">
+            <img src="images/icon-twitter.svg" class="mini--card--social--icon" alt="icon-twitter" />
+          </div>
+          <div class="mini--card--today today--plus">
+            553%
+          </div>
+        </div>
 
-  Likes
-  107
-  19%
+        <div class="mini--card">
+          <div class="mini--card--label">
+            Likes
+          </div>
+          <div class="mini--card--value">
+            107
+          </div>
+          <div class="mini--card--icon">
+            <img src="images/icon-youtube.svg" class="mini--card--social--icon" alt="icon-youtube" />
+          </div>
+          <div class="mini--card--today today--moins">
+            19%
+          </div>
+        </div>
 
-  Total Views
-  1407
-  12%
-</div>
+        <div class="mini--card">
+          <div class="mini--card--label">
+            Total Views
+          </div>
+          <div class="mini--card--value">
+            1407
+          </div>
+          <div class="mini--card--icon">
+            <img src="images/icon-youtube.svg" class="mini--card--social--icon" alt="icon-youtube" />
+          </div>
+          <div class="mini--card--today today--moins">
+            12%
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
   <!--<div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>-->
 </body>
+
 </html>

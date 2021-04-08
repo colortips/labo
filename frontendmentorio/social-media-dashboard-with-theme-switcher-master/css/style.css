@@ -1,5 +1,5 @@
 @import url(https://fonts.google.com/specimen/Inter);
-.card--today, .card--followers, .card--value, .card--at, .full--card, .primary--social-container, header {
+.card--today, .card--followers, .card--value, .card--at, .full--card, .primary--social-container, .header--mode, header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,8 @@
   margin: 0;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
 }
@@ -34,7 +35,7 @@ header {
   position: absolute;
   height: 25%;
   width: 100%;
-  background: #f5f7ff;
+  border-radius: 0 0 25px 25px;
 }
 
 .header--container {
@@ -48,20 +49,42 @@ header {
 .header--text {
   display: flex;
   flex-flow: column;
+  font-weight: 700;
 }
 
 .header--title {
-  color: #1e202a;
-  font-weight: 700;
   font-size: 30px;
-}
-
-.header--subtitle {
-  color: #63687e;
 }
 
 .header--mode {
   align-self: flex-start;
+  font-weight: 700;
+}
+
+.header--mode * {
+  margin: 0 10px;
+}
+
+.button--togle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  padding: 5px;
+}
+
+.button--togle::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.button--togle:hover {
+  cursor: pointer;
 }
 
 .main--container {
@@ -81,15 +104,15 @@ header {
 .full--card {
   width: 250px;
   height: 200px;
-  background: #f0f2fa;
   flex-flow: column;
   border-radius: 5px;
+  margin: 10px;
 }
 
 .full--card::after {
   content: "";
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: -175px;
   width: 250px;
   height: 5px;
   border-radius: 5px 5px 0 0;
@@ -122,20 +145,150 @@ header {
 
 .card--value {
   width: 100%;
-  color: #1e202a;
   font-size: 60px;
   font-weight: 700;
 }
 
 .card--followers {
   width: 100%;
-  color: #63687e;
   letter-spacing: 5px;
 }
 
 .card--today {
   width: 100%;
   margin-top: 10px;
+}
+
+.overview--container {
+  margin-top: 70px;
+}
+
+.overview--title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.mini--card--container {
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.mini--card {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10px 0;
+  grid-template: 1fr 1fr/1fr 1fr;
+  height: 100px;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 0 25px;
+  width: 200px;
+}
+
+.mini--card--label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 700;
+}
+
+.mini--card--value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.mini--card--icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mini--card--today {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.today--plus,
+.today--moins {
+  font-weight: 700;
+}
+
+.today--plus::before,
+.today--moins::before {
+  content: "";
+  position: relative;
+  width: 0;
+  height: 0;
+  margin-right: 5px;
+}
+
+.today--plus {
+  color: #1db489;
+}
+
+.today--plus::before {
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-bottom: 0.5em solid #1db489;
+}
+
+.today--moins {
+  color: #dc414c;
+}
+
+.today--moins::before {
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.5em solid #dc414c;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1050px) {
+  .header--container {
+    flex-flow: column;
+    width: 90%;
+    height: 70%;
+  }
+
+  .header--title {
+    font-size: 25px;
+  }
+
+  .header--mode {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .main--container {
+    position: relative;
+    margin-top: 250px;
+    width: 90%;
+    height: auto;
+  }
+
+  .primary--social-container {
+    justify-content: center;
+  }
+
+  .overview--container {
+    margin-top: 35px;
+  }
+
+  .overview--title {
+    font-size: 20px;
+  }
+
+  .mini--card--container {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
