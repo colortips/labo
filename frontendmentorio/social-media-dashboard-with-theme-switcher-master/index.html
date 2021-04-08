@@ -5,46 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+
   
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  </style>-->
 </head>
 <body>
+  <header class="header">
+    <div class="header--container">
+      <div class="header--text">
+        <div class="header--title">
+          Social Media Dashboard
+        </div>
+        <div class="header--subtitle">
+          Total Followers: 23,004
+        </div>
+      </div>      
+      <button class="header--mode button--togle">
+        Dark Mode
+      </button>
+    </div>
+    
 
-  Social Media Dashboard
-  Total Followers: 23,004
+  </header>
+  <div class="main--container">
+    <div class="primary--social-container">
+      <div class="full--card">
+        <div class="card--at">
+          <img src="images/icon-facebook.svg" class="social--icon" alt="icon-facebook"/>
+          @nathanf
+        </div>
+        <div class="card--value">
+          1987
+        </div>
+        <div class="card--followers">
+          Followers
+        </div>
+        <div class="card--today">
+          12 Today
+        </div>
+      </div>
 
-  Dark Mode
+      <div class="full--card">
+        <div class="card--at">
+          <img src="images/icon-twitter.svg" class="social--icon" alt="icon-twitter"/>
+          @nathanf
+        </div>
+        <div class="card--value">
+          1044
+        </div>
+        <div class="card--followers">
+          Followers
+        </div>
+        <div class="card--today">
+          99 Today
+        </div>
+      </div>
 
-  
+      <div class="full--card">
+        <div class="card--at">
+          <img src="images/icon-instagram.svg" class="social--icon" alt="icon-instagram"/>
+          @realnathanf
+        </div>
+        <div class="card--value">
+          11k
+        </div>
+        <div class="card--followers">
+          Followers
+        </div>
+        <div class="card--today">
+          1099 Today
+        </div>
+      </div>
 
-  @nathanf
-  1987
-  Followers
-  12 Today
-
-  @nathanf
-  1044
-  Followers
-  99 Today
-
-  @realnathanf
-  11k
-  Followers
-  1099 Today
-
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
-
-
-
+      <div class="full--card">
+        <div class="card--at">
+          <img src="images/icon-youtube.svg" class="social--icon" alt="icon-youtube"/>
+          Nathan F.
+        </div>
+        <div class="card--value">
+          8239
+        </div>
+        <div class="card--followers">
+          Subscribers
+        </div>
+        <div class="card--today">
+          144 Today
+        </div>
+      </div>
+    </div>
   Overview - Today
 
   Page Views
@@ -78,10 +133,10 @@
   Total Views
   1407
   12%
-  
-  <div class="attribution">
+</div>
+  <!--<div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div>-->
 </body>
 </html>

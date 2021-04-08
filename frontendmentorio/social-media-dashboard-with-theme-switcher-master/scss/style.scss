@@ -1,6 +1,7 @@
 @import './variables';
 @import './mixins';
 @import './placeholders';
+@import url(https://fonts.google.com/specimen/Inter);
 
 // ---- reset ----
 *{
@@ -13,4 +14,113 @@
     outline: 0;
     padding: 0;
     margin: 0;
+}
+
+body, html {
+	height: 100%;
+	width: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+	min-height: 100%;
+    font-family: "Inter";
+    font-weight: 400;
+    // @extend %flex-center;   
+}
+header{
+    position: absolute;
+    @extend %flex-center;
+    height: 25%;
+    width: 100%;
+    background: $Very-Pale-Blue-Top-BG-Pattern;
+}
+.header--container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 80%;
+    height: 60%;
+}
+.header--text{
+    display: flex;
+    flex-flow: column;
+}
+.header--title{
+    color: $Very-Dark-Blue-Text;
+    font-weight: 700;
+    font-size: 30px;
+}
+.header--subtitle{
+    color: $Dark-Grayish-Blue-Text;
+}
+.header--mode{
+    align-self: flex-start;
+}
+.main--container{
+    position: absolute;
+    margin-top: 10%;
+    width: 80%;
+    height: 80%;
+}
+.primary--social-container{
+    @extend %flex-center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 200px;
+    flex-flow: wrap;
+}
+.full--card{
+    @extend %flex-center;
+    width: 250px;
+    height: 200px;
+    background: $Light-Grayish-Blue-Card-BG;
+    flex-flow: column;
+    border-radius: 5px;
+}
+.full--card::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+}
+.full--card:nth-of-type(1)::after{
+    background: $Facebook;
+}
+.full--card:nth-of-type(2)::after{
+    background: $Twitter;
+}
+.full--card:nth-of-type(3)::after{
+    background: $Instagram;
+}
+.full--card:nth-of-type(4)::after{
+    background: $YouTube;
+}
+.card--at{
+    @extend %flex-center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.card--at *{
+    margin: 0 10px;
+}
+.card--value{
+    @extend %flex-center;
+    width: 100%;
+    color: $Very-Dark-Blue-Text;
+    font-size: 60px;
+    font-weight: 700;
+}
+.card--followers{
+    @extend %flex-center;
+    width: 100%;
+    color: $Dark-Grayish-Blue-Text;
+    letter-spacing: 5px;
+}
+.card--today{
+    @extend %flex-center;
+    width: 100%;
+    margin-top: 10px;
 }

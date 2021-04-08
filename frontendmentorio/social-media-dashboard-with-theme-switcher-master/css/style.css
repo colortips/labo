@@ -1,3 +1,10 @@
+@import url(https://fonts.google.com/specimen/Inter);
+.card--today, .card--followers, .card--value, .card--at, .full--card, .primary--social-container, header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   vertical-align: baseline;
   font-weight: inherit;
@@ -8,6 +15,127 @@
   outline: 0;
   padding: 0;
   margin: 0;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  font-family: "Inter";
+  font-weight: 400;
+}
+
+header {
+  position: absolute;
+  height: 25%;
+  width: 100%;
+  background: #f5f7ff;
+}
+
+.header--container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 80%;
+  height: 60%;
+}
+
+.header--text {
+  display: flex;
+  flex-flow: column;
+}
+
+.header--title {
+  color: #1e202a;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.header--subtitle {
+  color: #63687e;
+}
+
+.header--mode {
+  align-self: flex-start;
+}
+
+.main--container {
+  position: absolute;
+  margin-top: 10%;
+  width: 80%;
+  height: 80%;
+}
+
+.primary--social-container {
+  justify-content: space-between;
+  width: 100%;
+  min-height: 200px;
+  flex-flow: wrap;
+}
+
+.full--card {
+  width: 250px;
+  height: 200px;
+  background: #f0f2fa;
+  flex-flow: column;
+  border-radius: 5px;
+}
+
+.full--card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+.full--card:nth-of-type(1)::after {
+  background: #198ff5;
+}
+
+.full--card:nth-of-type(2)::after {
+  background: #1ca0f2;
+}
+
+.full--card:nth-of-type(3)::after {
+  background: linear-gradient(to right, #fdc468, #df4996);
+}
+
+.full--card:nth-of-type(4)::after {
+  background: #c4032a;
+}
+
+.card--at {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.card--at * {
+  margin: 0 10px;
+}
+
+.card--value {
+  width: 100%;
+  color: #1e202a;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.card--followers {
+  width: 100%;
+  color: #63687e;
+  letter-spacing: 5px;
+}
+
+.card--today {
+  width: 100%;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
