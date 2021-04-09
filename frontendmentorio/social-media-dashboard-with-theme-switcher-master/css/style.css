@@ -308,13 +308,6 @@ header {
   animation-name: ComeFromRight;
   animation-duration: 3s;
 }
-.header--text .header--text,
-.header--text .overview--title,
-.overview--title .header--text,
-.overview--title .overview--title {
-  animation-name: ComeFromLeft;
-  animation-duration: 3s;
-}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 1050px) {
   .header--container {

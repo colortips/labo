@@ -272,13 +272,8 @@ header {
     }
     .full--card,
     .mini--card,
-    .header--mode {
+    .header--mode{
         animation-name: ComeFromRight;
-        animation-duration: 3s;
-    }
-    .header--text,
-    .overview--title {
-        animation-name: ComeFromLeft;
         animation-duration: 3s;
     }
 }
