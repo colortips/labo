@@ -256,6 +256,66 @@ header {
   border-top: 0.5em solid #dc414c;
 }
 
+@keyframes ComeFromRight {
+  0% {
+    opacity: 0;
+    transform: translate(150px, 0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ComeFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-150px, 0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.full--card,
+.mini--card,
+.header--mode {
+  animation-name: ComeFromRight;
+  animation-duration: 3s;
+}
+
+@keyframes ComeFromRight {
+  0% {
+    opacity: 0;
+    transform: translate(150px, 0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ComeFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-150px, 0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.header--text .full--card,
+.header--text .mini--card,
+.header--text .header--mode,
+.overview--title .full--card,
+.overview--title .mini--card,
+.overview--title .header--mode {
+  animation-name: ComeFromRight;
+  animation-duration: 3s;
+}
+.header--text .header--text,
+.header--text .overview--title,
+.overview--title .header--text,
+.overview--title .overview--title {
+  animation-name: ComeFromLeft;
+  animation-duration: 3s;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 1050px) {
   .header--container {
     flex-flow: column;
@@ -271,6 +331,8 @@ header {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    animation-name: ComeFromLeft;
+    animation-duration: 3s;
   }
 
   .main--container {
@@ -297,13 +359,10 @@ header {
     flex-flow: wrap row;
     justify-content: center;
   }
-}
-@keyframes Light-to-Dark {
-  0% {
-    justify-content: flex-end;
-  }
-  100% {
-    justify-content: flex-start;
+
+  .header--text {
+    animation-name: ComeFromLeft;
+    animation-duration: 3s;
   }
 }
 

@@ -226,20 +226,77 @@ header {
     border-right: 0.25em solid transparent;
     border-top: 0.5em solid $Bright-Red;
 }
+@keyframes ComeFromRight {
+    0% {
+        opacity: 0;
+        transform: translate(150px, 0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes ComeFromLeft {
+    0% {
+        opacity: 0;
+        transform: translate(-150px, 0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.full--card,
+.mini--card,
+.header--mode {
+    animation-name: ComeFromRight;
+    animation-duration: 3s;
+}
+.header--text,
+.overview--title {
+    @keyframes ComeFromRight {
+        0% {
+            opacity: 0;
+            transform: translate(150px, 0);
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes ComeFromLeft {
+        0% {
+            opacity: 0;
+            transform: translate(-150px, 0);
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .full--card,
+    .mini--card,
+    .header--mode {
+        animation-name: ComeFromRight;
+        animation-duration: 3s;
+    }
+    .header--text,
+    .overview--title {
+        animation-name: ComeFromLeft;
+        animation-duration: 3s;
+    }
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 1050px) {
-    
-    .header--container{
+    .header--container {
         flex-flow: column;
         width: 90%;
         height: 70%;
     }
-    .header--title{
+    .header--title {
         font-size: 25px;
     }
-    .header--mode{
+    .header--mode {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        animation-name: ComeFromLeft;
+        animation-duration: 3s;
     }
     .main--container {
         position: relative;
@@ -247,13 +304,13 @@ header {
         width: 90%;
         height: auto;
     }
-    .primary--social-container{
+    .primary--social-container {
         justify-content: center;
     }
-    .overview--container{
+    .overview--container {
         margin-top: 35px;
     }
-    .overview--title{
+    .overview--title {
         font-size: 20px;
     }
     .mini--card--container {
@@ -261,12 +318,8 @@ header {
         flex-flow: wrap row;
         justify-content: center;
     }
-}
-@keyframes Light-to-Dark {
-    0%{
-        justify-content: flex-end;
-    }
-    100%{
-        justify-content: flex-start;
+    .header--text{
+        animation-name: ComeFromLeft;
+        animation-duration: 3s;
     }
 }
