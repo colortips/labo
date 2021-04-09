@@ -29,6 +29,7 @@ body {
   min-height: 100%;
   font-family: "Inter";
   font-weight: 400;
+  transition: 1s;
 }
 
 header {
@@ -36,6 +37,7 @@ header {
   height: 25%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  transition: 1s;
 }
 
 .header--container {
@@ -73,6 +75,7 @@ header {
   height: 26px;
   border-radius: 13px;
   padding: 5px;
+  transition: 2s;
 }
 
 .button--togle::after {
@@ -81,6 +84,7 @@ header {
   height: 20px;
   width: 20px;
   border-radius: 50%;
+  transition: 1s;
 }
 
 .button--togle:hover {
@@ -107,6 +111,7 @@ header {
   flex-flow: column;
   border-radius: 5px;
   margin: 10px;
+  transition: 0.5s;
 }
 
 .full--card::after {
@@ -171,8 +176,10 @@ header {
 
 .mini--card--container {
   display: grid;
-  grid-template: 1fr 1fr/1fr 1fr 1fr 1fr;
-  justify-items: center;
+  width: 100%;
+  gap: 0 max;
+  grid-template: 1fr 1fr/repeat(4, 270px);
+  justify-content: space-between;
 }
 
 .mini--card {
@@ -185,6 +192,7 @@ header {
   margin: 10px;
   padding: 0 25px;
   width: 200px;
+  transition: 0.5s;
 }
 
 .mini--card--label {
@@ -288,6 +296,14 @@ header {
     display: flex;
     flex-flow: wrap row;
     justify-content: center;
+  }
+}
+@keyframes Light-to-Dark {
+  0% {
+    justify-content: flex-end;
+  }
+  100% {
+    justify-content: flex-start;
   }
 }
 
