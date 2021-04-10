@@ -21,5 +21,124 @@ html {
     width: 100%;
 }
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 100%;
+    font-family: "Red Hat Text";
+    font-size: 14px;
+    font-weight: 700;
+    background: linear-gradient($very-dark, $dark);
+    // background: linear-gradient($dark, $primary-red);
+}
+.stars{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+.hills{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+}
+.title{
+    position: absolute;
+    width: 100%;
+    color: $white;
+    justify-self: flex-start;
+    letter-spacing: 10px;
+    font-size: 20px;
+    top: 140px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.countdown{
+    position: absolute;
+    display: flex;
+    flex-flow: nowrap row;
+}
+.countdown--tile, .countdown--tile--animation{
+    z-index: 1;
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    margin: 0 20px;
+    border-radius: 10px;
+}
+.countdown--tile--up{
+    position: relative;
+    width: 100%;
+    height: 75px;
+    background: $dark;
+    border-radius: 10px 10px 0 0;
+}
+.countdown--tile--down{
+    position: relative;
+    width: 100%;
+    height: 75px;
+    background: $darker;
+    border-radius: 0 0 10px 10px ;
+}
+.countdown--tile--value{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    width: 150px;
+    position: absolute;
+    font-size: 100px;
+    color: $primary-red;
+}
+.countdown--tile--value::before, .countdown--tile--value::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: $very-dark;
+}
+.countdown--tile--value::before{
+    border-radius: 0 10px 10px 0;
+    margin-right: 140px;
+}
+.countdown--tile--value::after{
+    border-radius:  10px 0 0 10px;
+    margin-left: 140px;
+}
+.countdown--tile--label{
+    position: absolute;
+    @extend %flex-center;
+    height: 50px;
+    width: 100%;
+    color: $primary-blue;
+    letter-spacing: 5px;
+    margin-top: 200px;
+}
+.social{
+    position: absolute;
+    display: flex;
+    bottom: 100px;
+}
+.social--icon{
+    margin: 0 20px;
+}
+
+@keyframes change {
+    0%{
+        transform: scaleY(1);
+    }
+    100%{
+        transform: scaleY(0);
+    }
+}
+.countdown--tile--animation{
+    box-shadow: 0 10px $very-dark;
+    background-color: $very-dark;
+    // animation-name: change;
+    // animation-duration: 1s;
+    // animation-iteration-count: infinite;
 }

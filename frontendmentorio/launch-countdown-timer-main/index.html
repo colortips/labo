@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red+Hat+Text">
   <link rel="stylesheet" href="css/style.css">
-  
+  <script defer src="js/countdown.js"></script>
+
+
+
   <title>Frontend Mentor | Launch countdown timer</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍
@@ -15,18 +21,65 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style> -->
 </head>
+
 <body>
+  <img src="images/bg-stars.svg" alt="stars in background" class="stars">
+  <img src="images/pattern-hills.svg" alt="hills in background" class="hills">
+  <div class="title">
+    Boubiloveforever
+  </div>
+  <div class="countdown">
+    <div class="countdown--tile">
+      <div class="countdown--tile--animation" id="animation--days">
+        <div class="countdown--tile--up"></div>
+        <div class="countdown--tile--value" id="days">99</div>
+        <div class="countdown--tile--down"></div>
+      </div>
+      <div class="countdown--tile--label">
+        Days
+      </div>
+    </div>
+    <div class="countdown--tile">
+      <div class="countdown--tile--animation" id="animation--hours">
+        <div class="countdown--tile--up"></div>
+        <div class="countdown--tile--value" id="hours">99</div>
+        <div class="countdown--tile--down"></div>
+      </div>
+      <div class="countdown--tile--label">
+        Hours
+      </div>
+    </div>
+    <div class="countdown--tile">
+      <div class="countdown--tile--animation" id="animation--minutes">
+        <div class="countdown--tile--up"></div>
+        <div class="countdown--tile--value" id="minutes">99</div>
+        <div class="countdown--tile--down"></div>
+      </div>
+      <div class="countdown--tile--label">
+        Minutes
+      </div>
+    </div>
+    <div class="countdown--tile">
+      <div class="countdown--tile--animation" id="animation--secondes">
+        <div class="countdown--tile--up"></div>
+        <div class="countdown--tile--value" id="secondes">99</div>
+        <div class="countdown--tile--down"></div>
+      </div>
+      <div class="countdown--tile--label">
+        Seconds
+      </div>
+    </div>
+  </div>
+  <div class="social">
+    <img src="images/icon-facebook.svg" alt="icon-facebook" class="social--icon">
+    <img src="images/icon-pinterest.svg" alt="icon-pinterest" class="social--icon">
+    <img src="images/icon-instagram.svg" alt="icon-instagram" class="social--icon">
+  </div>
 
-  We're launching soon
-
-  Days
-  Hours
-  Minutes
-  Seconds
-  
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
 </body>
+
 </html>
