@@ -2,6 +2,10 @@ const game_window = document.querySelector('.game__container')
 const racket = document.querySelector('.game__racket');
 const btn_left = document.querySelector('.button__left');
 const btn_right = document.querySelector('.button__right');
+btn_left.addEventListener("touchstart", move_left, false);
+btn_left.addEventListener("touchend", move_stop, false);
+btn_right.addEventListener("touchstart", move_right, false);
+btn_right.addEventListener("touchend", move_stop, false);
 var left_clicked = false;
 var right_clicked = false;
 var loaded = false;
@@ -20,13 +24,13 @@ window.addEventListener('keydown', function (evt) {
 window.addEventListener('keyup', function (evt) {
     keys[evt.keyCode] = false;
 });
-function left() {
+function move_left() {
     left_clicked = true;
 }
-function right() {
+function move_right() {
     right_clicked = true;
 }
-function stop() {
+function move_stop() {
     left_clicked = false;
     right_clicked = false;
 }
