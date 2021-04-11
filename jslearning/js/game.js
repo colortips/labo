@@ -9,7 +9,11 @@ btn_right.addEventListener("touchend", move_stop, false);
 var left_clicked = false;
 var right_clicked = false;
 var loaded = false;
-// const ball = document.querySelector('.game__ball');
+const ball = document.querySelector('.game__ball');
+ball.setAttribute('x', 0.1);
+ball.setAttribute('y', 0.9);
+console.log("x:"+ball.getAttribute('x'));
+console.log("y:"+ball.getAttribute('y'));
 
 // var rect = ball.getBoundingClientRect();
 // console.log(rect.top, rect.right, rect.bottom, rect.left);
@@ -34,9 +38,13 @@ function move_stop() {
     left_clicked = false;
     right_clicked = false;
 }
+function check_bound(){
+    console.log(ball.left);
+}
+
 var racket_x = game_window.clientWidth/2 - racket.clientWidth/2;
-// var ball_x = 0;
-// var ball_y = 0;
+var ball_x = 0;
+var ball_y = 0;
 setInterval(function () {
     // update position - left/right
     if (keys[keyCodes.left] || left_clicked) {
@@ -49,9 +57,19 @@ setInterval(function () {
     racket.style.transform = "translate(" + racket_x + "px, -10px)";
     // racket.style.left = racket_x + "px";
     // if (ball_y < game_window.clientHeight - ball.clientHeight - racket.clientHeight - 10) ball_y += 1;
+    check_bound();
+    let v = new Object()
+    let x = parseInt(ball.getAttribute('x'));
+    let y = parseInt(ball.getAttribute('y'));
+    v.x = x / x+y
+    v.y = y / x+y
+    console.log('x:' + v.x + "| y:" + v.y);
+    ball_x += v.x;
+    ball_y += v.y;
 
     // set ball position
     //    ball.style.transform = "translate("+ball_x+"px,"+ball_y+"px)"; 
+       ball.style.transform = "translate("+ball_x+"px,"+ball_y+"px)"; 
 
 }, 1 / 30);
 
@@ -86,3 +104,4 @@ document.addEventListener('mousemove', function (event) {
         // racket.style.top  = (mousePosition.y + offset[1]) + 'px';
     }
 }, true);
+
