@@ -196,6 +196,10 @@ body {
     margin-left: 55px;
   }
 
+  .countdown--tile--value::before, .countdown--tile--value::after {
+    display: none;
+  }
+
   .countdown--tile--label {
     margin-top: 100px;
     width: 60px;
