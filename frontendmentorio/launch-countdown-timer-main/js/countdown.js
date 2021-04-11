@@ -2,6 +2,12 @@ const days = document.getElementById('days');
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const secondes = document.getElementById('secondes');
+const animation_days = document.getElementById('animation--days');
+const animation_hours = document.getElementById('animation--hours');
+const animation_minutes = document.getElementById('animation--minutes');
+const animation_secondes = document.getElementById('animation--secondes');
+
+
 var last_secondes;
 
 function countdown_calcul() {
@@ -36,16 +42,13 @@ function countdown_calcul() {
     secondes.innerHTML = date_secondes;
 
     // Animate
-    anim(secondes, last_secondes);
-    secondes.style.animation = '';
-
-}
-setInterval(countdown_calcul, 500);
-
-function anim(elem, last) {
-    if (elem.innerHTML != last) {
-        console.log(elem.innerHTML);
-        elem.style.animation = 'change .1s';
+    if (secondes.innerHTML != last_secondes) {
+        animation_days.classList.add("run-animation");
+        animation_hours.classList.add("run-animation");
+        animation_minutes.classList.add("run-animation");
+        animation_secondes.classList.add("run-animation");
     }
     last_secondes = secondes.innerHTML;
+
 }
+setInterval(countdown_calcul, 1000);

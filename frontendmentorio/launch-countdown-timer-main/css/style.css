@@ -23,6 +23,7 @@ html {
 }
 
 body {
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,12 +32,12 @@ body {
   font-family: "Red Hat Text";
   font-size: 14px;
   font-weight: 700;
-  background: linear-gradient(#1e1f29, #2d2e43);
+  background: linear-gradient(#1e1f29, #2d2e43) no-repeat;
 }
 
 .stars {
   position: absolute;
-  width: 100%;
+  width: auto;
   height: 100%;
   z-index: -2;
 }
@@ -44,6 +45,7 @@ body {
 .hills {
   position: fixed;
   width: 100%;
+  height: 200px;
   bottom: 0;
   z-index: -1;
 }
@@ -57,6 +59,7 @@ body {
   font-size: 20px;
   top: 140px;
   text-transform: uppercase;
+  margin-left: 10px;
   text-align: center;
 }
 
@@ -66,7 +69,8 @@ body {
   flex-flow: nowrap row;
 }
 
-.countdown--tile, .countdown--tile--animation {
+.countdown--tile,
+.countdown--tile--animation {
   z-index: 1;
   display: flex;
   flex-flow: nowrap column;
@@ -83,6 +87,7 @@ body {
   height: 75px;
   background: #2d2e43;
   border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 -1px #26273b;
 }
 
 .countdown--tile--down {
@@ -91,6 +96,7 @@ body {
   height: 75px;
   background: #343650;
   border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 1px #3d3f57;
 }
 
 .countdown--tile--value {
@@ -100,58 +106,108 @@ body {
   z-index: 9999;
   width: 150px;
   position: absolute;
-  font-size: 100px;
+  font-size: 80px;
   color: #fb6087;
+  opacity: 0.8;
 }
 
-.countdown--tile--value::before, .countdown--tile--value::after {
+.countdown--tile--value::before,
+.countdown--tile--value::after {
   content: "";
   position: absolute;
-  width: 10px;
+  width: 5px;
   height: 10px;
   background: #1e1f29;
 }
 
 .countdown--tile--value::before {
   border-radius: 0 10px 10px 0;
-  margin-right: 140px;
+  margin-right: 145px;
 }
 
 .countdown--tile--value::after {
   border-radius: 10px 0 0 10px;
-  margin-left: 140px;
+  margin-left: 145px;
 }
 
 .countdown--tile--label {
   position: absolute;
   height: 50px;
-  width: 100%;
+  width: 150px;
   color: #8486a9;
   letter-spacing: 5px;
   margin-top: 200px;
-}
-
-.social {
-  position: absolute;
-  display: flex;
-  bottom: 100px;
-}
-
-.social--icon {
-  margin: 0 20px;
+  text-transform: uppercase;
 }
 
 @keyframes change {
   0% {
     transform: scaleY(1);
   }
-  100% {
+  10% {
     transform: scaleY(0);
+  }
+  15% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }
 .countdown--tile--animation {
-  box-shadow: 0 10px #1e1f29;
+  box-shadow: 0 5px #1e1f29;
   background-color: #1e1f29;
+}
+
+.run-animation {
+  animation: change 1s linear infinite;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 725px) {
+  .hills {
+    width: auto;
+    right: 1px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .countdown--tile,
+.countdown--tile--animation {
+    width: 60px;
+    margin: 0 10px;
+  }
+
+  .countdown--tile--up,
+.countdown--tile--down {
+    height: 30px;
+  }
+
+  .countdown--tile--value {
+    font-size: 30px;
+  }
+
+  .countdown--tile--value::before {
+    margin-right: 55px;
+  }
+
+  .countdown--tile--value::after {
+    margin-left: 55px;
+  }
+
+  .countdown--tile--label {
+    margin-top: 100px;
+    width: 60px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-left: 2px;
+  }
+}
+@media only screen and (min-device-height: 320px) and (max-device-height: 725px) {
+  .title {
+    top: 40px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

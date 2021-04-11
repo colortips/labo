@@ -21,6 +21,7 @@ html {
     width: 100%;
 }
 body {
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,22 +30,23 @@ body {
     font-family: "Red Hat Text";
     font-size: 14px;
     font-weight: 700;
-    background: linear-gradient($very-dark, $dark);
+    background: linear-gradient($very-dark, $dark) no-repeat;
     // background: linear-gradient($dark, $primary-red);
 }
-.stars{
+.stars {
     position: absolute;
-    width: 100%;
+    width: auto;
     height: 100%;
     z-index: -2;
 }
-.hills{
+.hills {
     position: fixed;
     width: 100%;
+    height: 200px;
     bottom: 0;
     z-index: -1;
 }
-.title{
+.title {
     position: absolute;
     width: 100%;
     color: $white;
@@ -53,14 +55,16 @@ body {
     font-size: 20px;
     top: 140px;
     text-transform: uppercase;
+    margin-left: 10px;
     text-align: center;
 }
-.countdown{
+.countdown {
     position: absolute;
     display: flex;
     flex-flow: nowrap row;
 }
-.countdown--tile, .countdown--tile--animation{
+.countdown--tile,
+.countdown--tile--animation {
     z-index: 1;
     display: flex;
     flex-flow: nowrap column;
@@ -70,75 +74,129 @@ body {
     margin: 0 20px;
     border-radius: 10px;
 }
-.countdown--tile--up{
+.countdown--tile--up {
     position: relative;
     width: 100%;
     height: 75px;
     background: $dark;
     border-radius: 10px 10px 0 0;
+    box-shadow: inset 0 -1px $darker;
 }
-.countdown--tile--down{
+.countdown--tile--down {
     position: relative;
     width: 100%;
     height: 75px;
-    background: $darker;
-    border-radius: 0 0 10px 10px ;
+    background: $dark-lighter;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 1px $dark-lightest;
 }
-.countdown--tile--value{
+.countdown--tile--value {
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
     width: 150px;
     position: absolute;
-    font-size: 100px;
+    font-size: 80px;
     color: $primary-red;
+    opacity: 0.8;
 }
-.countdown--tile--value::before, .countdown--tile--value::after{
+.countdown--tile--value::before,
+.countdown--tile--value::after {
     content: "";
     position: absolute;
-    width: 10px;
+    width: 5px;
     height: 10px;
     background: $very-dark;
 }
-.countdown--tile--value::before{
+.countdown--tile--value::before {
     border-radius: 0 10px 10px 0;
-    margin-right: 140px;
+    margin-right: 145px;
 }
-.countdown--tile--value::after{
-    border-radius:  10px 0 0 10px;
-    margin-left: 140px;
+.countdown--tile--value::after {
+    border-radius: 10px 0 0 10px;
+    margin-left: 145px;
 }
-.countdown--tile--label{
+.countdown--tile--label {
     position: absolute;
     @extend %flex-center;
     height: 50px;
-    width: 100%;
+    width: 150px;
     color: $primary-blue;
     letter-spacing: 5px;
     margin-top: 200px;
+    text-transform: uppercase;
 }
-.social{
-    position: absolute;
-    display: flex;
-    bottom: 100px;
-}
-.social--icon{
-    margin: 0 20px;
-}
+// .social {
+//     position: absolute;
+//     display: flex;
+//     bottom: 100px;
+// }
+// .social--icon {
+//     margin: 0 20px;
+//     src: "../images/icon-facebook-red.svg";
+// }
+// .social--icon:hover {
+//     cursor: pointer;
+// }
 
 @keyframes change {
-    0%{
+    0% {
         transform: scaleY(1);
     }
-    100%{
+    10% {
         transform: scaleY(0);
     }
+    15% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(1);
+    }
 }
-.countdown--tile--animation{
-    box-shadow: 0 10px $very-dark;
+.countdown--tile--animation {
+    box-shadow: 0 5px $very-dark;
     background-color: $very-dark;
-    // animation-name: change;
-    // animation-duration: 1s;
-    // animation-iteration-count: infinite;
+}
+.run-animation {
+    animation: change 1s linear infinite;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 725px) {
+    .hills {
+        width: auto;
+        right: 1px;
+    }
+    .title {
+        font-size: 14px;
+    }
+    .countdown--tile,
+    .countdown--tile--animation {
+        width: 60px;
+        margin: 0 10px;
+    }
+    .countdown--tile--up,
+    .countdown--tile--down {
+        height: 30px;
+    }
+    .countdown--tile--value {
+        font-size: 30px;
+    }
+    .countdown--tile--value::before {
+        margin-right: 55px;
+    }
+    .countdown--tile--value::after {
+        margin-left: 55px;
+    }
+    .countdown--tile--label {
+        margin-top: 100px;
+        width: 60px;
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-left: 2px;
+    }
+}
+@media only screen and (min-device-height: 320px) and (max-device-height: 725px) {
+    .title {
+        top: 40px;
+    }
 }
