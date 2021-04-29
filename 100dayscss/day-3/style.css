@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+body {
+	background: #343a40;
+}
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 #495057;
+	overflow: hidden;
+	background: #343a40;
+	color: #333;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.circle {
+	background: #bde0fe;
+	border-radius: 50%;
+	box-shadow: 0px 5px 10px rgb(0, 0, 0, 50%);
+	position: absolute;
+}
+.circle-1 {
+	z-index: 1;
+	width: 100px;
+	height: 100px;
+	top: -50px;
+	left: -50px;
+	animation: bounce-1 3s infinite alternate;
+}
+.circle-2 {
+	z-index: 2;
+	width: 60px;
+	height: 60px;
+	top: -30px;
+	left: -30px;
+	animation: bounce-2 3s infinite alternate;
+}
+.circle-3 {
+	z-index: 3;
+	width: 20px;
+	height: 20px;
+	top: -10px;
+	left: -10px;
+	animation: bounce-3 3s infinite alternate;
+}
+
+@keyframes bounce-1 {
+	0%,
+	25% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes bounce-2 {
+	0%,
+	50% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes bounce-3 {
+	0%,
+	75% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

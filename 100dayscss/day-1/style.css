@@ -1,0 +1,49 @@
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #343a40;
+    color: #333;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.burger {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+}
+.burger--line {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #bde0fe;
+    transition: 1s;
+}
+.active .l1 {
+    transform: translate(0, 20px) rotate(405deg);
+}
+.active .l2 {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+}
+.active .l3 {
+    transform: translate(0, -20px) rotate(495deg);
+}
+.l2 {
+    margin: 10px 0;
+}
