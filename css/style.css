@@ -23,14 +23,15 @@ input {
   font-weight: 700;
   color: #f8f9fa;
 }
-.main--title, .card--title{
+.main--title,
+.card--title {
   font-family: "Spectral";
   color: #f8f9fa;
   font-weight: 700;
 }
-a{
+a {
   font-family: "Karla";
-  color: #E9ECEF;
+  color: #e9ecef;
   font-weight: 500;
   font-size: 18px;
 }
@@ -47,14 +48,20 @@ a{
   overflow-x: hidden;
   overflow-y: hidden;
   background: linear-gradient(to right, #bde0fe, #ffc8dd);
-
 }
 .fadeLeft {
+  opacity: 0;
   animation: FadeLeft 1s cubic-bezier(0.94, -0.01, 1, 1) !important;
 }
 .fadeUp {
+  opacity: 0;
   animation: FadeUp 1s cubic-bezier(0.94, -0.01, 1, 1) !important;
   /* animation: ComeFromTop 1s ease-in-out reverse !important; */
+}
+.blinky{
+  transition: 1s;
+  background: #ffc8dd;
+  animation: bg-blink 2s ease-in-out 2s infinite;
 }
 .main--title {
   width: 100%;
@@ -69,25 +76,26 @@ a{
   animation: ComeFromTop 1s ease-in-out;
   font-size: 24px;
 }
-.heart, .heart::before, .heart::after{
+.heart,
+.heart::before,
+.heart::after {
   width: 20px;
   height: 20px;
   background: linear-gradient(to right, #bde0fe, #ffc8dd);
   transition: 1s;
-
 }
-.heart::before, .heart::after{
+.heart::before,
+.heart::after {
   position: absolute;
   content: "";
   border-radius: 50%;
 }
-.heart{
+.heart {
   transform: rotate(-45deg);
   margin: 20px;
   z-index: 1;
-
 }
-.heart:hover{
+.heart:hover {
   background: transparent;
   opacity: 0.8;
   width: 30px;
@@ -95,18 +103,19 @@ a{
   border-radius: 2px;
   border: solid #ffc8dd 1px;
 }
-.heart::before{
-  left: 10px
+.heart::before {
+  left: 10px;
 }
-.heart::after{
+.heart::after {
   top: -10px;
 }
-.heart:hover::before, .heart:hover::after{
+.heart:hover::before,
+.heart:hover::after {
   top: 5px;
   left: 5px;
 }
 
-.main--title:hover .heart{
+.main--title:hover .heart {
   animation: Beat 2s ease-in-out infinite;
 }
 .container {
@@ -254,41 +263,50 @@ a:hover::before {
   }
 }
 @keyframes Beat {
-  0%{
+  0% {
     transform: scale(1) rotate(-45deg);
   }
-  50%{
+  50% {
     transform: scale(1.5) rotate(-45deg);
-
   }
-  100%{
+  100% {
     transform: scale(1) rotate(-45deg);
   }
-  
 }
 @keyframes FadeLeft {
-  0%{
+  0% {
     opacity: 1;
     transform: none;
   }
-  75%{
+  75% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 0;
     transform: translateX(-100vw);
-  }  
+  }
 }
 @keyframes FadeUp {
-  0%{
+  0% {
     opacity: 1;
     transform: none;
   }
-  75%{
+  75% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 0;
     transform: translateY(-125px);
-  }  
+  }
+}
+@keyframes bg-blink {
+  0% {
+    background:  #ffc8dd;
+  }
+  50% {
+    background: #bde0fe;
+  }
+  100% {
+    background: #ffc8dd;
+  }
 }
