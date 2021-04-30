@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 
 <body>
     <div class="background">
-        <div class="main--title"><div class="heart"></div>My pasionate Lab<div class="heart"></div></div>
+        <div class="main--title">
+            <div class="heart"></div>My pasionate Lab<div class="heart"></div>
+        </div>
         <div class="container">
             <div class="theme--card">
                 <div class="card--title">CSS drawing</div>
@@ -26,17 +29,17 @@
             <div class="theme--card">
                 <div class="card--title">Integration challenges:</div>
                 <div class="card--links">
-                    <a href="frontendmentorio\3-column-preview-card-component-main\index.html">
+                    <a href="frontendmentorio/3-column-preview-card-component-main/index.html">
                         3-column preview card component
                     </a>
-                    <a href="frontendmentorio\intro-component-with-signup-form-master\index.html">
+                    <a href="frontendmentorio/intro-component-with-signup-form-master/index.html">
                         intro-component-with-signup-form
                     </a>
-                    <a href="frontendmentorio\social-media-dashboard-with-theme-switcher-master/index.html">
+                    <a href="frontendmentorio/social-media-dashboard-with-theme-switcher-master/index.html">
                         social-media-dashboard-with-theme-switcher
                     </a>
 
-                    <a href="frontendmentorio\launch-countdown-timer-main/index.html">launch-countdown-timer</a>
+                    <a href="frontendmentorio/launch-countdown-timer-main/index.html">launch-countdown-timer</a>
 
                 </div>
             </div>
@@ -44,8 +47,8 @@
                 <div class="card--title">Cool things !</div>
                 <div class="card--links">
                     <a href="https://dogs-vuejs.hugoschoen.fr/">Dogs - vue.JS</a>
-                    <a href="100dayscss\index.html">100days css challenge</a>
-                    <a href="jslearning\index.html">BrickBreaker</a>
+                    <a href="100dayscss/index.html">100days css challenge</a>
+                    <a href="jslearning/index.html">BrickBreaker</a>
                 </div>
             </div>
 
@@ -72,6 +75,26 @@
 
         </div>
     </div>
+    <script>
+        function delay(URL) {
+            $(".main--title").addClass("fadeUp");
+            $(".container").addClass("fadeLeft");
+            setTimeout(function () { window.location = URL }, 1000);
+        }
+        function setDelay(URL) {
+            return "javascript:delay('" + URL + "')";
+        }
+        $("a").each(function (index) {
+            $(this).attr("href", setDelay($(this).attr("href")));
+            $(this).onclick = function (event) {
+                alert('clicked on ');
+            };
+            // console.log(index + ": " + setDelay($(this).attr("href")));
+        });
+        // $("a").onclick= function(event) {
+        //     alert('clicked on ');
+        // };
+    </script>
 </body>
 
 </html>

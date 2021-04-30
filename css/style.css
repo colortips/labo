@@ -23,7 +23,17 @@ input {
   font-weight: 700;
   color: #f8f9fa;
 }
-
+.main--title, .card--title{
+  font-family: "Spectral";
+  color: #f8f9fa;
+  font-weight: 700;
+}
+a{
+  font-family: "Karla";
+  color: #E9ECEF;
+  font-weight: 500;
+  font-size: 18px;
+}
 .background {
   display: flex;
   justify-content: flex-start;
@@ -37,6 +47,14 @@ input {
   overflow-x: hidden;
   overflow-y: hidden;
   background: linear-gradient(to right, #bde0fe, #ffc8dd);
+
+}
+.fadeLeft {
+  animation: FadeLeft 1s cubic-bezier(0.94, -0.01, 1, 1) !important;
+}
+.fadeUp {
+  animation: FadeUp 1s cubic-bezier(0.94, -0.01, 1, 1) !important;
+  /* animation: ComeFromTop 1s ease-in-out reverse !important; */
 }
 .main--title {
   width: 100%;
@@ -98,6 +116,7 @@ input {
   justify-content: center;
   align-items: center;
   flex-flow: wrap row;
+  animation: ComeFromLeft 2s ease-in-out;
 }
 .theme--card {
   display: flex;
@@ -185,6 +204,15 @@ a:hover::before {
     transform: translateY(0);
   }
 }
+@keyframes ComeFromLeft {
+  0%,
+  50% {
+    transform: translateY(-300vw);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @keyframes FadeIn {
   0%,
   50% {
@@ -238,14 +266,29 @@ a:hover::before {
   }
   
 }
-.main--title, .card--title{
-  font-family: "Spectral";
-  color: #f8f9fa;
-  font-weight: 700;
+@keyframes FadeLeft {
+  0%{
+    opacity: 1;
+    transform: none;
+  }
+  75%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(-100vw);
+  }  
 }
-a{
-  font-family: "Karla";
-  color: #E9ECEF;
-  font-weight: 500;
-  font-size: 18px;
+@keyframes FadeUp {
+  0%{
+    opacity: 1;
+    transform: none;
+  }
+  75%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-125px);
+  }  
 }
