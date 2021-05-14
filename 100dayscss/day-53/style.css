@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #002e45;
+    color: #333;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translatey(30%);
+    animation: wave-height 3s ease-in-out infinite alternate;
+}
+.wave svg {
+    position: absolute;
+}
+.wave--1 {
+    z-index: 2;
+    animation: wave 5s ease-in-out infinite alternate;
+    left: -200px;
+}
+.wave--2 {
+    z-index: 1;
+    animation: wave 7.5s ease-in-out infinite alternate;
+    left: -200px;
+}
+.wave--3 {
+    z-index: 0;
+    animation: wave 10s ease-in-out infinite alternate;
+    left: -200px;
+}
+@keyframes wave {
+    0% {
+        left: -10px;
+    }
+    100% {
+        left: -380px;
+    }
+}
+@keyframes wave-height {
+    0% {
+        transform: translatey(30%);
+    }
+    100% {
+        transform: translatey(60%);
+    }
+}

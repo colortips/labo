@@ -1,0 +1,108 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #343a40;
+    color: #333;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.thermo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 100px;
+    left: 100px;
+    background: #212529;
+    border-radius: 50%;
+    box-shadow: 2px 4px 8px 0 #13161a50;
+    cursor: pointer;
+    overflow: hidden;
+}
+.thermo--bg {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(to right, #bde0fe 0%, #ffc8dd 100%);
+    border-radius: 50%;
+    box-shadow: inset 2px 4px 8px 0 #13161a50;
+}
+.bg--square {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    background: #212529;
+    transform-origin: 0 0;
+    transform: rotate(45deg);
+}
+.thermo--panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background: #343a40;
+    box-shadow: 2px 4px 8px 0 #13161a50;
+}
+.thermo--panel > div {
+    background: -webkit-linear-gradient(0deg, #bde0fe 0%, #ffc8dd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+}
+.panel--cursor {
+    width: 3px;
+    height: 8px;
+    top: -15px;
+    border-radius: 1px 1px 0 0;
+    background: #212529 !important;
+    transform-origin: 0 75px;
+    transform: rotate(-45deg);
+    transition: all 0.5s ease-in-out;
+}
+.panel--now {
+    top: 20px;
+}
+.panel--day,
+.panel--night {
+    transition: all 0.5s ease-in-out;
+    font-size: 40px !important;
+}
+.panel--night {
+    transform: translatex(50px) scale(0);
+    opacity: 0%;
+}
+.panel--room {
+    bottom: 20px;
+}
+.thermo:hover .panel--day {
+    transform: translatex(-50px) scale(0);
+    opacity: 0%;
+}
+.thermo:hover .panel--night {
+    transform: translatex(0px) scale(1);
+    opacity: 100%;
+}
+.thermo:hover .panel--cursor {
+    transform: rotate(45deg);
+}
