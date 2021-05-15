@@ -14,7 +14,7 @@ function countdown_calcul() {
     // Calculation of date
     var actual_date = Date.now();
     var actual_year = new Date().getFullYear();
-    var birthday = "-05-17T00:00:00";
+    var birthday = "-05-17T09:33:00";
     if (actual_date > new Date(actual_year + birthday)) actual_year++;
     var countdown_date = new Date(actual_year + birthday).valueOf();
     var date_diff = (countdown_date - actual_date) / 1000;
