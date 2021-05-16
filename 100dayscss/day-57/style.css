@@ -50,7 +50,9 @@
 	z-index: 0;
 	width: 200px;
 	height: 200px;
-	border: solid 4px #343A40;	
+	border: solid 4px #343A40;
+	animation: slice0 5s ease-in-out infinite alternate;	
+	
 }
 .slice1{
 	z-index: 1;
