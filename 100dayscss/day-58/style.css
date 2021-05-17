@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.container{
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: url("https://ae01.alicdn.com/kf/HTB13Z5RX_QspeRjt_a0q6zPbFXaB/Pinup-Rockabilly-r-tro-japon-Style-bricolage-artisanat-mont-Fuji-cerisier-fleurs-Stretch-popeline-tissu-imprim.jpg_640x640.jpg") center center no-repeat;
+	background-size: 400px 400px;
+}
+.croped{
+	background: url("https://www.toutpourlesfemmes.com/sites/default/files/public/styles/carre400/public/article/fuji-2_0.jpg?itok=yuLq-cHl") center center no-repeat;
+	width: 400px;
+	height: 50px;
+	transition: all 1s ease-in-out;
+	position: relative;
+	opacity: 0;
+	
+}
+.croped-1{
+	transform: translateX(-100px);
+	background-position: 0 0px;
+}
+.croped-2{
+	transform: translateX(100px);
+	background-position: 0 -50px;
+}
+.croped-3{
+	transform: translateX(-100px);
+	background-position: 0 -100px;
+}
+.croped-4{
+	transform: translateX(100px);
+	background-position: 0 -150px;
+}
+.croped-5{
+	transform: translateX(-100px);
+	background-position: 0 -200px;
+}
+.croped-6{
+	transform: translateX(100px);
+	background-position: 0 -250px;
+}
+.croped-7{
+	transform: translateX(-100px);
+	background-position: 0 -300px;
+}
+.croped-8{
+	transform: translateX(100px);
+	background-position: 0 -350px;
+}
+.container:hover > div{
+	transform: translateX(0);
+	opacity: 1;
+}
+.text{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	align-items: center;
+	width: 400px;
+	height: 400px;
+	top: 0px;
+}
+.text > div{
+	transition: all .5s ease-in-out;
+	word-spacing: 10px;
+	letter-spacing: 2px;
+	font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+.text--title{
+	font-size: 56px;
+}
+.text--subtitle{
+	font-size: 32px;
+}
+.container:hover .text--title{
+	transform: translateY(-100px);
+}
+.container:hover .text--subtitle{
+	transform: translateY(100px);
+	opacity: 0%;
+}
