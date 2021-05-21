@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=popins:700,300);
+
 * {
   vertical-align: baseline;
   font-weight: inherit;
@@ -24,6 +26,7 @@ body {
   display: flex;
   flex-flow: wrap row;
   justify-content: space-around;
+  font-family: "Popins", Helvetica, sans-serif;
 }
 .challenge {
   display: flex;
@@ -47,10 +50,20 @@ body {
   font-size: 60;
   font-weight: 700;
 }
+.challenge a::after{
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 3px;
+  background: linear-gradient(to right, #BDE0FE 0%, #FFC8DD 100%);
+  transform: translateY(20px);
+  z-index: 1;
+}
 .day {
   width: 300px;
   height: 300px;
   overflow: hidden;
   border-radius: 7px;
+  z-index: 2;
 
 }
