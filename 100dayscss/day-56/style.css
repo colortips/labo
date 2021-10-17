@@ -1,130 +1,194 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 
 .frame {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 400px;
-    margin-top: -200px;
-    margin-left: -200px;
-    border-radius: 2px;
-    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    background: linear-gradient(45deg, #bde0fe 0%, #ffc8dd 100%);
-    color: #333;
-    font-family: "Open Sans", Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+	background: radial-gradient(#18b386, #16A078);
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.center {
-    width: 200px;
-    height: 200px;
-    perspective: 600px;
-    transition: all 250s linear;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.fleur {
+  position: absolute;
+	animation: fleur linear 5s infinite;
 }
-.center:hover {
-    transform: rotateZ(36000deg);
+.fleur:hover{
+	opacity: 60%;
 }
-.cube {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    transform: rotatex(45deg) rotatey(45deg) rotateZ(0deg);
-    animation: cube 5s ease-in-out infinite;
+.fleur::after{
+	content:"";
+	z-index: 99;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: radial-gradient(#f1c40f, #b7a7e0, #7759c4, #7759c4);
+	animation: bloom ease-in-out 5s infinite alternate;	
+	transform: translate(-50%, -50%);
 }
-.cube--face {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: #343a4060;
-    border: solid 1px #21252990;
+.fleur::before{
+	content:"";
+	z-index: 90;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: #7759c4;
+	transform: translate(-25px, -25px);
 }
-.face--front {
-    transform: rotateY(0deg) translateZ(100px);
+.petale{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 0px 60px;
+	background: #7b5ec6;
+	transform-origin: 0px 0px;
 }
-.face--right {
-    transform: rotateY(90deg) translateZ(100px);
+.petale::after{
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 0px 50px;
+	background: linear-gradient(90deg, #9983d3, #7b5ec6);
+	transform-origin: 0px 0px;
 }
-.face--back {
-    transform: rotateY(180deg) translateZ(100px);
+.petale::before{
+	content: "";
+	z-index: 1;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border-radius: 0px 40px;
+	background: linear-gradient(90deg, #b7a7e0, #9983d3);
+	transform-origin: 0px 0px;
+	
 }
-.face--left {
-    transform: rotateY(-90deg) translateZ(100px);
+.p1{
+	transform: rotate(0deg);
+	animation: grow-1 ease-in-out 5s infinite alternate;
+	
 }
-.face--top {
-    transform: rotateX(90deg) translateZ(100px);
+.p2{
+	transform: rotate(72deg);
+	animation: grow-2 ease-in-out 5s infinite alternate;
+	
 }
-.face--bottom {
-    transform: rotateX(-90deg) translateZ(100px);
+.p3{
+	transform: rotate(144deg);
+	animation: grow-3 ease-in-out 5s infinite alternate;
+	
+}
+.p4{
+	transform: rotate(216deg);
+	animation: grow-4 ease-in-out 5s infinite alternate;
+	
+}
+.p5{
+	transform: rotate(288deg);
+	animation: grow-5 ease-in-out 5s infinite alternate;
+	
+}
+@keyframes fleur {
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);		
+	}
+}
+@keyframes grow-1 {
+	0%{
+		transform: scale(0);
+	}
+	10%{
+		transform: scale(0);
+	}
+	60%{
+		transform: scale(1);		
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+@keyframes grow-2 {
+	0%{
+		transform: scale(0) rotate(72deg);
+	}
+	20%{
+		transform: scale(0) rotate(72deg);
+	}
+	60%{
+		transform: scale(1) rotate(72deg);		
+	}
+	100%{
+		transform: scale(1) rotate(72deg);
+	}
+}
+@keyframes grow-3 {
+	0%{
+		transform: scale(0) rotate(144deg);
+	}
+	30%{
+		transform: scale(0) rotate(144deg);
+	}
+	60%{
+		transform: scale(1) rotate(144deg);		
+	}
+	100%{
+		transform: scale(1) rotate(144deg);
+	}
+}
+@keyframes grow-4 {
+	0%{
+		transform: scale(0) rotate(216deg);
+	}
+	40%{
+		transform: scale(0) rotate(216deg);
+	}
+	60%{
+		transform: scale(1) rotate(216deg);		
+	}
+	100%{
+		transform: scale(1) rotate(216deg);
+	}
+}
+@keyframes grow-5 {
+	0%{
+		transform: scale(0) rotate(288deg);
+	}
+	50%{
+		transform: scale(0) rotate(288deg);
+	}
+	60%{
+		transform: scale(1) rotate(288deg);		
+	}
+	100%{
+		transform: scale(1) rotate(288deg);
+	}
+}
+@keyframes bloom {
+	0%{
+		opacity: 0%;
+	}
+	40%{
+		opacity: 100%;
+	}
+	100%{
+		opacity: 100%;
+	}
 }
 
-@keyframes rotation {
-    0% {
-        transform: rotateZ(0deg);
-    }
-    100% {
-        transform: rotateZ(360deg);
-    }
-}
-@keyframes cube {
-    0% {
-        transform: rotatex(45deg) rotatey(45deg) rotateZ(45deg);
-    }
-    20% {
-        transform: rotatex(60deg) rotatey(0deg) rotateZ(30deg);
-    }
-    40% {
-        transform: rotatex(120deg) rotatey(80deg) rotateZ(45deg);
-    }
-    60% {
-        transform: rotatex(90deg) rotatey(90deg) rotateZ(0deg);
-    }
-    80% {
-        transform: rotatex(70deg) rotatey(180deg) rotateZ(30deg);
-    }
-    100% {
-        transform: rotatex(45deg) rotatey(45deg) rotateZ(45deg);
-    }
-}
-.cuby {
-    width: 25%;
-    height: 25%;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: rotatex(45deg) rotatey(45deg) rotateZ(0deg);
-    animation: cube 5s ease-in-out infinite;
-}
-.cuby--face {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(#ffc8dd, #bde0fe80);
-    border: solid 1px #bde0fe40;
-}
-.facy--front {
-    transform: rotateY(0deg) translateZ(25px);
-}
-.facy--right {
-    transform: rotateY(90deg) translateZ(25px);
-}
-.facy--back {
-    transform: rotateY(180deg) translateZ(25px);
-}
-.facy--left {
-    transform: rotateY(-90deg) translateZ(25px);
-}
-.facy--top {
-    transform: rotateX(90deg) translateZ(25px);
-}
-.facy--bottom {
-    transform: rotateX(-90deg) translateZ(25px);
-}

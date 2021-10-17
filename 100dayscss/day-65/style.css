@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(https://fonts.googleapis.com/css?family=popins:700,300);
 
 .frame {
   position: absolute;
@@ -13,111 +13,117 @@
 	overflow: hidden;
   background: #343A40;
   color: #333;
-	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-family: 'Popins', Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
-.circleBtn {
-  position: absolute;
-	width: 50px;
-	height: 50px;
-}
-#check{
-	display: none;
-}
-.circle{
-	z-index: 99;
+.shape{
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	background : transparent;
+	width: 200px;
+	height: 200px;
 	box-sizing: border-box;
-	border: 2px solid #fff;
-	border-radius: 50%;
-	transition: all .2s ease-in-out;
-	box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 20%), inset 2px 2px 4px 0 rgb(0 0 0 / 20%);
+	border: 1px solid #ffc8dd;
 }
-#check:checked ~ .circle{
-	border-width: 16px;
-	background: #bde0fe;
-	box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 20%), inset 2px 2px 4px 0 rgb(0 0 0 / 0%);	
+.shape:nth-child(1){
+	animation: shape-1 2s ease-in-out infinite;
 }
-.splashs{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.shape:nth-child(2){
+	animation: shape-2 2s ease-in-out infinite;
 }
-.splash{
-	position: absolute;
-	width: 2px;
-	height: 25px;
-	background: #ffc8dd;
-	opacity:1;
+.shape:nth-child(3){
+	animation: shape-3 2s ease-in-out infinite;
 }
-#check:checked ~ .splashs .splash{
-	transition: all .2s ease-in-out;	
+.shape:nth-child(4){
+	animation: shape-4 2s ease-in-out infinite;
 }
-.splash:nth-child(1){
-	transform: rotate(0deg) translatey(-25px) scaley(0);
-	
+.shape:nth-child(5){
+	animation: shape-5 2s ease-in-out infinite;
 }
-.splash:nth-child(2){
-	transform: rotate(45deg) translatey(-25px) scaley(0);
+.shape:nth-child(6){
+	animation: shape-6 2s ease-in-out infinite;
 }
-.splash:nth-child(3){
-	transform: rotate(90deg) translatey(-25px) scaley(0);
+.shape:nth-child(7){
+	animation: shape-7 2s ease-in-out infinite;
 }
-.splash:nth-child(4){
-	transform: rotate(135deg) translatey(-25px) scaley(0);
+.shape:nth-child(8){
+	animation: shape-8 2s ease-in-out infinite;
 }
-.splash:nth-child(5){
-	transform: rotate(180deg) translatey(-25px) scaley(0);
+.shape:nth-child(9){
+	animation: shape-9 2s ease-in-out infinite;
 }
-.splash:nth-child(6){
-	transform: rotate(225deg) translatey(-25px) scaley(0);
+@keyframes shape-1 {
+	25%{
+		transform: rotate(200deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-.splash:nth-child(7){
-	transform: rotate(270deg) translatey(-25px) scaley(0);
+@keyframes shape-2 {
+	25%{
+		transform: rotate(220deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-.splash:nth-child(8){
-	transform: rotate(315deg) translatey(-25px) scaley(0);
+@keyframes shape-3 {
+	25%{
+		transform: rotate(240deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-#check:checked ~ .splashs .splash:nth-child(1){
-	transform: rotate(0deg) translatey(-50px) scaley(1);
-	opacity: 0;
+@keyframes shape-4 {
+	25%{
+		transform: rotate(260deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-#check:checked ~ .splashs .splash:nth-child(2){
-	transform: rotate(45deg) translatey(-50px) scaley(1);
-	opacity: 0;
+@keyframes shape-5 {
+	25%{
+		transform: rotate(280deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-#check:checked ~ .splashs .splash:nth-child(3){
-	transform: rotate(90deg) translatey(-50px) scaley(1);
-	opacity: 0;
+@keyframes shape-6 {
+	25%{
+		transform: rotate(300deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-#check:checked ~ .splashs .splash:nth-child(4){
-	transform: rotate(135deg) translatey(-50px) scaley(1);
-	opacity: 0;
+@keyframes shape-7 {
+	25%{
+		transform: rotate(320deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-#check:checked ~ .splashs .splash:nth-child(5){
-	transform: rotate(180deg) translatey(-50px) scaley(1);
-	opacity: 0;
+@keyframes shape-8 {
+	25%{
+		transform: rotate(340deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-#check:checked ~ .splashs .splash:nth-child(6){
-	transform: rotate(225deg) translatey(-50px) scaley(1);
-	opacity: 0;
+@keyframes shape-9 {
+	25%{
+		transform: rotate(360deg);
+		height: 50px;		
+		border-radius: 50%;
+		border: 1px solid #bde0fe;		
+	}
 }
-#check:checked ~ .splashs .splash:nth-child(7){
-	transform: rotate(270deg) translatey(-50px) scaley(1);
-	opacity: 0;
-}
-#check:checked ~ .splashs .splash:nth-child(8){
-	transform: rotate(315deg) translatey(-50px) scaley(1);
-	opacity: 0;
-}
+

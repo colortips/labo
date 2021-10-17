@@ -1,87 +1,160 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
-body {
-	background: #343a40;
-}
+
 .frame {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 400px;
-	height: 400px;
-	margin-top: -200px;
-	margin-left: -200px;
-	border-radius: 2px;
-	box-shadow: 4px 8px 16px 0 #495057;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
 	overflow: hidden;
-	background: #343a40;
-	color: #333;
-	font-family: "Open Sans", Helvetica, sans-serif;
+  background: #343A40;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 .center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
-
-.circle {
-	background: #bde0fe;
+.circle{
+	position: relative;
+	overflow: hidden;
+	width: 180px;
+	height: 180px;
 	border-radius: 50%;
-	box-shadow: 0px 5px 10px rgb(0, 0, 0, 50%);
+	background: #7DDFFC;
+	box-shadow: inset 0px 4px 4px 0 rgba(0,0,0,0.25);
+	animation: circle-shade 5s ease-in-out infinite;
+}
+.sun{
 	position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: 73px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #FFEF00;
+    transform-origin: 50% 400%;
+		transform: rotate(-25deg);
+		animation: sun-run 5s ease-in-out infinite;
 }
-.circle-1 {
-	z-index: 1;
-	width: 100px;
-	height: 100px;
-	top: -50px;
-	left: -50px;
-	animation: bounce-1 3s infinite alternate;
+.sand{
+	position: absolute;
+	height: 57px;
+	width: 100%;
+	background: #F0DE75;
+	bottom: 0;
 }
-.circle-2 {
-	z-index: 2;
-	width: 60px;
-	height: 60px;
-	top: -30px;
-	left: -30px;
-	animation: bounce-2 3s infinite alternate;
+.pyramide-left{
+	position: absolute;
+	background: #F4F4F4;
+	clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+	top: 67px;
+  left: 35px;
+  height: 57px;
+  width: 116px;
+	animation: py-shade 5s ease-in-out infinite;
+	
 }
-.circle-3 {
-	z-index: 3;
-	width: 20px;
-	height: 20px;
-	top: -10px;
-	left: -10px;
-	animation: bounce-3 3s infinite alternate;
+.pyramide-right{
+	position: absolute;
+	background: #DDDADA;
+	clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+	top: 67px;
+  left: 93px;
+  height: 57px;
+  width: 58px;
+	animation: py-shade 5s ease-in-out infinite reverse;
+	
 }
 
-@keyframes bounce-1 {
-	0%,
-	25% {
-		transform: scale(0);
+.shadow{
+	position: absolute;
+    z-index: 2;
+    top: 124px;
+    left: -80px;
+    height: 30px;
+    width: 360px;
+    background: rgba(0, 0, 0, 0.2);
+    transform-origin: 50% 0%;
+    clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+		animation: shade 5s ease-in-out infinite;
+	
+}
+@keyframes circle-shade {
+	0%{
+		opacity: 0;
+	}
+	30%, 70% {
+		opacity: 1;
 	}
 	100% {
-		transform: scale(1);
+		opacity: 0;
 	}
 }
-@keyframes bounce-2 {
-	0%,
-	50% {
-		transform: scale(0);
+@keyframes sun-run {
+	0% {
+    background: #F57209;
+    transform: rotate(-70deg);
+	}
+	30% {
+    background: #FFEF00;
+    transform: rotate(-28deg);
+	}
+	70% {
+    background: #FFEF00;
 	}
 	100% {
-		transform: scale(1);
+    background: #F57209;
+    transform: rotate(70deg);
 	}
 }
-@keyframes bounce-3 {
-	0%,
+@keyframes py-shade{
+	0% {
+    background: #A6A6A6;
+	}
+	30% {
+    background: #F4F4F4;
+	}
+	70% {
+    background: #DDDADA;
+	}
+	100% {
+    background: #A6A6A6;
+	}
+}
+@keyframes shade{
+	0% {
+    transform: scaleY(0);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+    clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+	}
+	30% {
+    transform: scaleY(1);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+    clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+	}
+	55% {
+    transform: scaleY(0.4);
+	}
 	75% {
-		transform: scale(0);
+    transform: scaleY(1);
 	}
 	100% {
-		transform: scale(1);
+    transform: scaleY(0);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+    clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
 	}
 }
