@@ -1,0 +1,180 @@
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #000;
+    color: #f8f9fa;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    filter: contrast(30);
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sphere {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    filter: blur(15px);
+}
+
+.blob {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+}
+.blob:nth-child(1) {
+    transform: rotate(125deg);
+}
+.blob:nth-child(2) {
+    transform: rotate(247deg);
+}
+.blob:nth-child(3) {
+    transform: rotate(164deg);
+}
+.blob:nth-child(4) {
+    transform: rotate(217deg);
+}
+
+.blob::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.blob:nth-child(1)::after {
+    transform-origin: 34px 34px;
+    -webkit-animation: rotate 2.9s ease-in-out 0.4s infinite;
+    animation: rotate 2.9s ease-in-out 0.4s infinite;
+}
+.blob:nth-child(2)::after {
+    transform-origin: 28px 28px;
+    -webkit-animation: rotate 3.3s ease-in-out 0.8s infinite;
+    animation: rotate 3.3s ease-in-out 0.8s infinite;
+}
+.blob:nth-child(3)::after {
+    transform-origin: 22px 22px;
+    -webkit-animation: rotate 3.7s ease-in-out 1.2s infinite;
+    animation: rotate 3.7s ease-in-out 1.2s infinite;
+}
+.blob:nth-child(4)::after {
+    transform-origin: 16px 16px;
+    -webkit-animation: rotate 4.1s ease-in-out 1.6s infinite;
+    animation: rotate 4.1s ease-in-out 1.6s infinite;
+}
+
+.splash {
+    position: absolute;
+    top: 38px;
+    left: 38px;
+}
+.splash:nth-child(6) {
+    width: 9px;
+    height: 9px;
+    transform: rotate(85deg);
+}
+.splash:nth-child(7) {
+    width: 11px;
+    height: 11px;
+    transform: rotate(88deg);
+}
+.splash:nth-child(8) {
+    width: 13px;
+    height: 13px;
+    transform: rotate(25deg);
+}
+.splash:nth-child(9) {
+    width: 15px;
+    height: 15px;
+    transform: rotate(225deg);
+}
+.splash:nth-child(10) {
+    width: 17px;
+    height: 17px;
+    transform: rotate(268deg);
+}
+.splash::after {
+    position: absolute;
+    display: block;
+    content: "";
+    background: #fff;
+    filter: blur(3px);
+}
+.splash:nth-child(6)::after {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transform-origin: 56px 56px;
+    -webkit-animation: rotate 3.9s ease-in-out 0.4s infinite;
+    animation: rotate 3.9s ease-in-out 0.4s infinite;
+}
+.splash:nth-child(7)::after {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    transform-origin: 52px 52px;
+    -webkit-animation: rotate 4.3s ease-in-out 0.8s infinite;
+    animation: rotate 4.3s ease-in-out 0.8s infinite;
+}
+.splash:nth-child(8)::after {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transform-origin: 48px 48px;
+    -webkit-animation: rotate 4.7s ease-in-out 1.2s infinite;
+    animation: rotate 4.7s ease-in-out 1.2s infinite;
+}
+.splash:nth-child(9)::after {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transform-origin: 44px 44px;
+    -webkit-animation: rotate 5.1s ease-in-out 1.6s infinite;
+    animation: rotate 5.1s ease-in-out 1.6s infinite;
+}
+.splash:nth-child(10)::after {
+    width: 17px;
+    height: 17px;
+    background: #fff;
+    border-radius: 50%;
+    transform-origin: 40px 40px;
+    -webkit-animation: rotate 5.5s ease-in-out 2s infinite;
+    animation: rotate 5.5s ease-in-out 2s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    100% {
+        transform: rotate(360deg) translate3d(0, 0, 0);
+    }
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    100% {
+        transform: rotate(360deg) translate3d(0, 0, 0);
+    }
+}
