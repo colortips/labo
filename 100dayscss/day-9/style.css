@@ -1,0 +1,210 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #1a2238;
+    color: #394568;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.moon {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #f6edbd;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 #f6edbd;
+    top: 50px;
+    left: 75px;
+    animation: rise 2s ease-out;
+}
+@keyframes rise {
+    0% {
+        top: 400px;
+        left: -100px;
+    }
+}
+.crater {
+    position: absolute;
+    border-radius: 50%;
+    background: #ece1a8;
+}
+.crater:nth-child(1) {
+    width: 15px;
+    height: 15px;
+    top: 15px;
+    left: 15px;
+}
+.crater:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    top: 15px;
+    left: 35px;
+}
+.crater:nth-child(3) {
+    width: 8px;
+    height: 8px;
+    top: 39px;
+    left: 12px;
+}
+.crater:nth-child(4) {
+    width: 6px;
+    height: 6px;
+    top: 44px;
+    left: 20px;
+}
+.crater:nth-child(5) {
+    width: 8px;
+    height: 8px;
+    top: 46px;
+    left: 28px;
+}
+.crater:nth-child(6) {
+    width: 6px;
+    height: 6px;
+    top: 44px;
+    left: 38px;
+}
+.crater:nth-child(7) {
+    width: 8px;
+    height: 8px;
+    top: 39px;
+    left: 46px;
+}
+.hill {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    border-radius: 50%;
+}
+.front {
+    background: #303c5d;
+}
+.back {
+    background: #26314f;
+}
+.hill.back:nth-child(2) {
+    top: 200px;
+    left: -150px;
+}
+.hill.back:nth-child(3) {
+    top: 200px;
+    left: 150px;
+}
+.hill.front:nth-child(4) {
+    top: 250px;
+    left: -150px;
+}
+.hill.front:nth-child(5) {
+    top: 225px;
+}
+.hill.front:nth-child(6) {
+    top: 250px;
+    left: 200px;
+}
+.display {
+    position: absolute;
+    width: 300px;
+    height: 75px;
+    bottom: 50px;
+    left: 50px;
+    border-radius: 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 2px 4px 8px 0 #13161a50;
+}
+.temp {
+    font-size: 40px;
+    font-weight: 400;
+}
+.info,
+.prev {
+    font-size: 15px;
+    line-height: 5px;
+}
+.drop {
+    position: absolute;
+    z-index: 20;
+    bottom: 75px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7fc1f9;
+
+    animation-fill-mode: none;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    transform-origin: 50% 100%;
+}
+.drop::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: -2px;
+    left: 1px;
+    width: 6px;
+    height: 6px;
+    background: #7fc1f9;
+    border-radius: 3px;
+}
+.drop::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: -5px;
+    left: 2px;
+    width: 4px;
+    height: 10px;
+    background: #7fc1f9;
+    border-radius: 50%;
+}
+.d1 {
+    left: 18px;
+    -webkit-animation: drop 0.8s linear 1.72s infinite;
+    animation: drop 0.8s linear 1.72s infinite;
+}
+.d2 {
+    left: 75px;
+    -webkit-animation: drop 0.8s linear 0.52s infinite;
+    animation: drop 0.8s linear 0.52s infinite;
+}
+.d3 {
+    left: 150px;
+    -webkit-animation: drop 0.8s linear 1.42s infinite;
+    animation: drop 0.8s linear 1.42s infinite;
+}
+.d4 {
+    left: 222px;
+    -webkit-animation: drop 0.8s linear 0.8s infinite;
+    animation: drop 0.8s linear 0.8s infinite;
+}
+.d5 {
+    left: 275px;
+    -webkit-animation: drop 0.8s linear 1.3s infinite;
+    animation: drop 0.8s linear 1.3s infinite;
+}
+@keyframes drop {
+    0% {
+        transform: translate3d(40px, -400px, 0) scaleX(1) scaleY(1) rotate(17deg);
+    }
+    85% {
+        transform: translate3d(0, 0, 0) scaleX(1) scaleY(1) rotate(17deg);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scaleX(3) scaleY(0) rotate(0deg);
+    }
+}
