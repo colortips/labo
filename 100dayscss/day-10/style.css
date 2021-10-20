@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #343a40;
+    color: #f8f9fa;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: -webkit-linear-gradient(0deg, #bde0fe 0%, #ffc8dd 100%);
+    border-radius: 50%;
+    box-shadow: 2px 4px 8px 0 #13161a50;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.clock::before {
+    position: absolute;
+    content: "";
+    width: 190px;
+    height: 190px;
+    background: #212529;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.clock::after {
+    position: absolute;
+    content: "";
+    width: 164px;
+    height: 164px;
+    border: 2px dashed #f8f9fa;
+    border-radius: 50%;
+    top: 16px;
+    left: 16px;
+}
+.clock > * {
+    z-index: 1;
+}
+.date,
+.info {
+    font-size: 14px;
+}
+.heure {
+    font-size: 40px;
+    font-weight: 700;
+}
+.heure::after {
+    content: ":";
+    position: absolute;
+    left: 95px;
+    top: 70px;
+    animation: clignotement 1s infinite;
+}
+@keyframes clignotement {
+    0%,
+    100% {
+        opacity: 100%;
+    }
+    75%,
+    25% {
+        opacity: 0%;
+    }
+}
