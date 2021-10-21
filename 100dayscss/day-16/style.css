@@ -1,0 +1,301 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #343a40;
+    color: #f8f9fa;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rond {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    -webkit-animation: AnimRond 5s ease-in-out infinite;
+    animation: AnimRond 5s ease-in-out infinite;
+}
+.spark_rond {
+    box-sizing: border-box;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-animation: spark_rond_anim 5s ease-in-out infinite;
+    animation: spark_rond_anim 5s ease-in-out infinite;
+}
+.octogone {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #f8f9fa;
+    -webkit-animation: AnimOcto 5s ease-in-out infinite;
+    animation: AnimOcto 5s ease-in-out infinite;
+}
+.octogone:before {
+    content: "";
+    width: 42px;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 29px solid #f8f9fa;
+    border-left: 29px solid #343a40;
+    border-right: 29px solid #343a40;
+}
+.octogone:after {
+    content: "";
+    width: 42px;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 29px solid #f8f9fa;
+    border-left: 29px solid #343a40;
+    border-right: 29px solid #343a40;
+}
+.spark_octogone {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 100px;
+    left: 100px;
+    -webkit-animation: spark_octo_anim 5s ease-in-out infinite;
+    animation: spark_octo_anim 5s ease-in-out infinite;
+}
+.spark {
+    position: absolute;
+    top: 0;
+    left: 98px;
+    width: 4px;
+    height: 200px;
+}
+.spark:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    background: #fff;
+}
+.spark:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    background: #fff;
+}
+.spark_octogone > .spark:after {
+    top: auto;
+    bottom: 0;
+}
+.spark_octogone > .s2 {
+    transform: rotate(45deg);
+}
+.spark_octogone > .s3 {
+    transform: rotate(90deg);
+}
+.spark_octogone > .s4 {
+    transform: rotate(135deg);
+}
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #f8f9fa;
+    -webkit-animation: AnimTri 5s ease-in-out infinite;
+    animation: AnimTri 5s ease-in-out infinite;
+}
+.spark_triangle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 100px;
+    left: 100px;
+    -webkit-animation: spark_triangle_anim 5s ease-in-out infinite;
+    animation: spark_triangle_anim 5s ease-in-out infinite;
+}
+.spark_triangle > .s2 {
+    transform: rotate(124deg);
+}
+.spark_triangle > .s3 {
+    transform: rotate(237deg);
+}
+
+@keyframes AnimRond {
+    0% {
+        transform: translate3d(0, -300px, 0) scaleY(1.2);
+    }
+    10% {
+        transform: translate3d(0, 50px, 0) scaleY(0.8);
+    }
+    14% {
+        transform: translate3d(0, -30px, 0) scaleY(1.1);
+    }
+    18% {
+        transform: translate3d(0, 10px, 0) scaleY(0.9);
+    }
+    20%,
+    22% {
+        transform: translate3d(0, 0, 0) scaleY(1);
+    }
+    26% {
+        transform: translate3d(0, 0, 0) scale(1.2);
+    }
+    32%,
+    74% {
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    80% {
+        transform: translate3d(0, 0, 0) scale(1.2);
+    }
+    84% {
+        transform: translate3d(0, 0, 0) scale(0.9);
+    }
+    86%,
+    88% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    92% {
+        transform: translate3d(0, -30px, 0) scaleY(0.9);
+    }
+    100% {
+        transform: translate3d(0, 300px, 0) scaleY(1.2);
+    }
+}
+@keyframes spark_rond_anim {
+    0%,
+    74% {
+        transform: translate3d(0, 0, 0) scale(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    84%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1.4);
+        opacity: 0;
+    }
+}
+@keyframes AnimOcto {
+    0%,
+    30% {
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    36% {
+        transform: translate3d(0, 0, 0) scale(1.2);
+    }
+    40% {
+        transform: translate3d(0, 0, 0) scale(0.9);
+    }
+    42%,
+    44% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    48% {
+        transform: translate3d(0, 0, 0) scale(1.2);
+    }
+    54%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+}
+@keyframes spark_octo_anim {
+    0%,
+    30% {
+        transform: translate3d(0, 0, 0) scale(0);
+        opacity: 1;
+    }
+    36% {
+        opacity: 1;
+    }
+    40%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1.4);
+        opacity: 0;
+    }
+}
+@keyframes AnimTri {
+    0%,
+    52% {
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    58% {
+        transform: translate3d(0, 0, 0) scale(1.2);
+    }
+    62% {
+        transform: translate3d(0, 0, 0) scale(0.9);
+    }
+    64%,
+    66% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    70% {
+        transform: translate3d(0, 0, 0) scale(1.2);
+    }
+    76%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    0%,
+    52% {
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    58% {
+        transform: translate3d(0, 0, 0) scale(1.2);
+    }
+    62% {
+        transform: translate3d(0, 0, 0) scale(0.9);
+    }
+    64%,
+    66% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    70% {
+        transform: translate3d(0, 0, 0) scale(1.2);
+    }
+    76%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+}
+@keyframes spark_triangle_anim {
+    0%,
+    52% {
+        transform: translate3d(0, 0, 0) scale(0);
+        opacity: 1;
+    }
+    58% {
+        opacity: 1;
+    }
+    62%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1.4);
+        opacity: 0;
+    }
+}
