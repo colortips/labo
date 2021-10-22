@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #343a40;
+    color: #333;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 175px;
+    height: 175px;
+    background: -webkit-linear-gradient(-45deg, #bde0fe 0%, #ffc8dd 100%);
+    box-shadow: 2px 4px 8px 0 #13161a50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.svg:not(:root) {
+    overflow: hidden;
+}
+.polygon {
+    position: absolute;
+    transform: rotate(-45deg) translate(0px, -25px);
+    width: 160px;
+    height: 140px;
+}
+
+.middle {
+    fill: #ccc;
+    transition: all 0.5s ease-in-out;
+}
+.dark {
+    fill: #aaa;
+    transition: all 0.5s ease-in-out;
+}
+.light {
+    fill: #eee;
+    transition: all 0.5s ease-in-out;
+}
+.polygon:hover > .middle {
+    fill: #eee;
+}
+
+.polygon:hover > .dark {
+    fill: #ccc;
+}
+
+.polygon:hover > .light {
+    fill: #aaa;
+}
