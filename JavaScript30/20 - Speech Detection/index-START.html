@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Speech Detection</title>
 </head>
+
 <body>
 
   <div class="words" contenteditable>
   </div>
 
-<script>
-  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  <script>
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+    recognition.lang = 'en-US';
+
+    let p = document.createElement('p');
+    const words = document.querySelector('.words');
+    words.appendChild(p);
+
+    recognition.addEventListener('results', e => {
+      const transcript = array.from(e.results)
+        .map(result => result[0])
+        .map(result => result.transcript)
+        .join();
+
+      p.textContent = transcript;
+
+      if (e.result[0].isFinal) {
+        p = document.createElement('p');
+        words.appendChild(p);
+      }
+      if (transcript.includes('get the weather')) {
+        console.log('Getting the weather !');
+      }
+      console.log(transcript);
+    });
+
+    recognition.start();
 
 
-</script>
+  </script>
 
 
   <style>
@@ -33,14 +63,14 @@
       margin: 50px auto;
       background: white;
       border-radius: 5px;
-      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
       padding: 1rem 2rem 1rem 5rem;
       background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
       background-size: 100% 3rem;
       position: relative;
       line-height: 3rem;
     }
-    
+
     p {
       margin: 0 0 3rem;
     }
@@ -58,4 +88,5 @@
   </style>
 
 </body>
+
 </html>

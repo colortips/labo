@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #343a40;
+    color: #333;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.grid {
+    height: 380px;
+    width: 380px;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "p1 p2" "p3 p4";
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.item {
+    overflow: hidden;
+    border-radius: 25px;
+    background: #212529;
+    box-shadow: 2px 4px 8px 0 #13161a50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.item::after {
+    content: "+";
+    position: absolute;
+    overflow: hiden;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 2px 4px 8px 0 #13161a50;
+    background: linear-gradient(to right, #bde0fe 0%, #ffc8dd 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 40px;
+    opacity: 0%;
+    transform: scale(200%);
+    transition: all ease-in-out 0.5s;
+    transition-property: transform, opacity;
+}
+.item:hover > img {
+    opacity: 80%;
+    filter: blur(1px);
+}
+.item:hover::after {
+    opacity: 100%;
+    transform: scale(100%);
+}
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+    transition: all ease-in-out 0.5s;
+    transition-property: filter, opacity;
+}
