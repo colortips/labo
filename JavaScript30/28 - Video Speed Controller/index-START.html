@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Video Speed Scrubber</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="wrapper">
-    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" loop controls></video>
+    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" loop
+      controls></video>
     <div class="speed">
       <div class="speed-bar">1×</div>
     </div>
   </div>
 
-<script>
-</script>
+  <script>
+    const speed = document.querySelector('.speed');
+    const bar = speed.querySelector('.speed-bar');
+    const video = document.querySelector('.flex');
+
+    speed.addEventListener('mousemove', function (e) {
+      const y = e.pageY - this.offsetTop;
+      const height = y / this.offsetHeight;
+      const min = 0.4;
+      const max = 4;
+      const percent = Math.round(height * 100) + '%';
+      const playbackRate = height * (max - min) + min;
+      bar.style.height = percent;
+      bar.textContent = playbackRate.toFixed(2) + 'x';
+      video.playbackRate = playbackRate;
+    });
+  </script>
 </body>
+
 </html>
