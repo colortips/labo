@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #343a40;
+    color: #333;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pacman {
+    position: relative;
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid #f4d146;
+    border-left: 60px solid #f4d146;
+    border-bottom: 60px solid transparent;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pacman-up linear infinite 0.5s;
+}
+.pacman::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid transparent;
+    border-left: 60px solid #f4d146;
+    border-bottom: 60px solid #f4d146;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    animation: pacman-down linear infinite 0.5s;
+}
+.pacman::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #343a40;
+    transform: translate(10px, -30px);
+}
+@keyframes pacman-up {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(44deg);
+    }
+}
+@keyframes pacman-down {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-88deg);
+    }
+}
+.points {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f4d146;
+    font-size: 75px;
+    letter-spacing: 10px;
+}
+.points > p {
+    animation: defilement 2s infinite linear;
+    white-space: nowrap;
+}
+@keyframes defilement {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-25%, 0, 0);
+    }
+}
