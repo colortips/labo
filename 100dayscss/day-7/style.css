@@ -1,0 +1,189 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(//fonts.googleapis.com/icon?family=Material+Icons);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: -webkit-linear-gradient(-45deg, #bde0fe 0%, #ffc8dd 100%);
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f8f9fa;
+}
+
+.center {
+    width: 250px;
+    height: 250px;
+    background: #343a40;
+    z-index: 2;
+    transition: transform ease-in-out 0.3s;
+    box-shadow: 2px 4px 8px 0 #13161a50;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.center.active {
+    transform: translate(120px);
+}
+
+.header {
+    background: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.search-input {
+    position: absolute;
+    transition: all ease-in-out 0.3s;
+    border: none;
+    border-radius: 50px;
+    width: 200px;
+    height: 30px;
+    opacity: 0;
+    transform: translate(20px);
+}
+.search-input.active {
+    transform: translate(-18px);
+    opacity: 1;
+}
+.search-box {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    transform: translate(100px);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+.search-box:hover {
+    opacity: 1;
+}
+.menu-icon {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    transform: translate(-100px);
+    cursor: pointer;
+}
+.menu-icon > .line-1 {
+    position: absolute;
+    width: 22px;
+    height: 3px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    transform: translate(10px, 20px);
+}
+.menu-icon > .line-2 {
+    position: absolute;
+    width: 35px;
+    height: 3px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    transform: translate(10px, 33px);
+}
+.menu-icon > .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    transform: translate(35px, 16px);
+}
+.menu-icon > div {
+    opacity: 0.8;
+}
+.menu-icon:hover > div {
+    opacity: 1;
+}
+.notifications {
+    display: flex;
+    flex-flow: column;
+    height: 200px;
+    justify-content: space-around;
+    font-size: 13px;
+}
+.notification {
+    display: flex;
+    flex-flow: column;
+    width: 200px;
+    height: 50px;
+    transform: translate(50px, -10px);
+}
+.notification:hover {
+    color: #bde0fe;
+    cursor: pointer;
+}
+.time {
+    font-size: 11px;
+    transform: translate(0px, 10px);
+}
+.point {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-40px, 7px);
+    width: 24px;
+    height: 24px;
+    background: #343a40;
+    border-radius: 50%;
+}
+.point::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: solid #bde0fe;
+}
+.notif-line {
+    position: absolute;
+    width: 5px;
+    height: 200px;
+    background: #f8f9fa;
+    transform: translate(20px);
+    opacity: 0.5;
+}
+.menu {
+    z-index: 1;
+    position: absolute;
+    background: #495057;
+    display: flex;
+    flex-flow: column;
+    width: 220px;
+    height: 230px;
+    transition: transform ease-in-out 0.3s;
+    box-shadow: 2px 4px 8px 0 #13161a50;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.menu.active {
+    transform: translate(-20px);
+}
+.menu > p {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    transition: background-color ease-in-out 0.3s;
+    cursor: pointer;
+}
+.menu > p:hover {
+    background: -webkit-linear-gradient(-45deg, #bde0fe 0%, #ffc8dd 100%);
+    color: #495057;
+}
