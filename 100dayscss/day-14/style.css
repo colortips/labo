@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(//fonts.googleapis.com/icon?family=Material+Icons);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #343a40;
+    color: #343a40;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 800px;
+}
+
+.card {
+    position: absolute;
+    z-index: 2;
+    width: 250px;
+    height: 180px;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.trigger{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;		
+}
+
+.trigger:hover + .card {
+    transform: rotateX(180deg);
+    box-shadow: 8px -10px 15px 0 rgba(0, 0, 0, 0.5);
+}
+.recto,
+.verso {
+    position: absolute;
+    background: #bde0fe;
+    width: 250px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+    transform: rotateX(0);
+    outline: 1px solid #343a40;
+}
+.recto,
+.verso {
+    overflow: hidden;
+}
+.verso {
+    z-index: 1;
+    transform: rotateX(180deg);
+}
+.material-icons {
+    position: absolute;
+    font-size: 100px;
+}
+.recto > .material-icons {
+    transition: all 1s ease-in-out;
+    -webkit-animation: bike 0.5s ease-in-out infinite;
+    animation: bike 0.5s ease-in-out infinite;
+}
+.road {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    transform: translateY(290px);
+    border: dashed 5px;
+    animation: cycle linear infinite 15s;
+}
+.verso > .material-icons {
+    transform: rotate(90deg);
+    transition: all 1s ease-in-out;
+    -webkit-animation: airplane 2s ease-in-out infinite;
+    animation: airplane 2s ease-in-out infinite;
+}
+.sky {
+    width: 100%;
+    height: 100%;
+}
+.sky-line {
+    position: absolute;
+    left: 350px;
+    background: #343a40;
+    border-radius: 25px;
+}
+@keyframes airplane {
+    0%,
+    100% {
+        transform: rotate(90deg) translateX(20px);
+    }
+    50% {
+        transform: rotate(90deg) translateX(-20px);
+    }
+}
+@keyframes bike {
+    0%,
+    100% {
+        transform: rotateX(15deg);
+    }
+    50% {
+        transform: rotateX(-15deg);
+    }
+}
+@keyframes cycle {
+    0% {
+        transform: translateY(290px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(290px) rotate(-360deg);
+    }
+}
+@keyframes skyline {
+    0% {
+        left: 350px;
+    }
+    100% {
+        left: -100px;
+    }
+}
